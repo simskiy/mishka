@@ -8,7 +8,7 @@ let config = {
     'no-js',
   ],
   'alwaysAddBlocks': [
-    // 'sprite-svg',
+    'sprite-svg',
     // 'sprite-png',
     // 'object-fit-polyfill',
   ],
@@ -28,7 +28,8 @@ let config = {
     './script.js',
   ],
   'addAssets': {
-    'src/img/**/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/img/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/img/svg/*.svg': 'img/svg/',
     'src/fonts/*{eot,svg,woff,ttf,woff2}': 'fonts/',
     'src/favicon/out/*{png,ico,svg,xml,webmanifest}': 'img/favicons/',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',

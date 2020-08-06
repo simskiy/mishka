@@ -170,16 +170,16 @@ exports.copyAssets = copyAssets;
 function copyImg(cb) {
   let copiedImages = [];
   nth.blocksFromHtml.forEach(function(block) {
-    let src = `${dir.blocks}${block}/img`;
+    let src = `${dir.blocks}${block}/img/`;
     if(fileExist(src)) copiedImages.push(src);
   });
   nth.config.alwaysAddBlocks.forEach(function(block) {
-    let src = `${dir.blocks}${block}/img`;
+    let src = `${dir.blocks}${block}/img/`;
     if(fileExist(src)) copiedImages.push(src);
   });
   if(copiedImages.length) {
     (async () => {
-      await cpy(copiedImages, `${dir.build}img`);
+      await cpy(copiedImages, `${dir.build}img/`);
       cb();
     })();
   }
@@ -191,7 +191,7 @@ exports.copyImg = copyImg;
 
 
 function generateSvgSprite(cb) {
-  let spriteSvgPath = `${dir.blocks}sprite-svg/svg/`;
+  let spriteSvgPath = `${dir.src}img/sprite-svg/svg/`;
   if(nth.config.alwaysAddBlocks.indexOf('sprite-svg') > -1 && fileExist(spriteSvgPath)) {
     return src(spriteSvgPath + '*.svg')
       .pipe(svgmin(function () {
@@ -199,7 +199,7 @@ function generateSvgSprite(cb) {
       }))
       .pipe(svgstore({ inlineSvg: true }))
       .pipe(rename('sprite.svg'))
-      .pipe(dest(`${dir.blocks}sprite-svg/img/`));
+      .pipe(dest(`${dir.src}img/svg/`));
   }
   else {
     cb();
@@ -209,7 +209,7 @@ exports.generateSvgSprite = generateSvgSprite;
 
 
 function generatePngSprite(cb) {
-  let spritePngPath = `${dir.blocks}sprite-png/png/`;
+  let spritePngPath = `${dir.src}img/sprite-png/png/`;
   if(nth.config.alwaysAddBlocks.indexOf('sprite-png') > -1 && fileExist(spritePngPath)) {
     del(`${dir.blocks}sprite-png/img/*.png`);
     let fileName = 'sprite-' + Math.random().toString().replace(/[^0-9]/g, '') + '.png';
@@ -225,7 +225,7 @@ function generatePngSprite(cb) {
       .pipe(imagemin([ imagemin.optipng({ optimizationLevel: 5 }) ]))
       .pipe(dest(`${dir.blocks}sprite-png/img/`));
     let cssStream = spriteData.css
-      .pipe(dest(`${dir.blocks}sprite-png/`));
+      .pipe(dest(`${dir.src}img/`));
     return merge(imgStream, cssStream);
   }
   else {
@@ -458,14 +458,14 @@ function serve() {
   watch([`${dir.blocks}**/img/*.{jpg,jpeg,png,gif,svg,webp}`], { events: ['all'], delay: 100 }, series(copyImg, reload));
 
   // Спрайт SVG
-  watch([`${dir.blocks}sprite-svg/svg/*.svg`], { events: ['all'], delay: 100 }, series(
+  watch([`${dir.src}img/sprite-svg/svg/*.svg`], { events: ['all'], delay: 100 }, series(
     generateSvgSprite,
     copyImg,
     reload,
   ));
 
   // Спрайт PNG
-  watch([`${dir.blocks}sprite-png/png/*.png`], { events: ['all'], delay: 100 }, series(
+  watch([`${dir.src}img/sprite-png/png/*.png`], { events: ['all'], delay: 100 }, series(
     generatePngSprite,
     copyImg,
     compileSass,
@@ -476,7 +476,7 @@ function serve() {
 
 exports.build = series(
   parallel(clearBuildDir, writePugMixinsFile),
-  parallel(compilePugFast, copyAssets, generateSvgSprite, generatePngSprite),
+  parallel(compilePugFast, copyAssets),
   parallel(copyImg, writeSassImportsFile, writeJsRequiresFile),
   parallel(compileSass, buildJs),
 );
@@ -484,7 +484,7 @@ exports.build = series(
 
 exports.default = series(
   parallel(clearBuildDir, writePugMixinsFile),
-  parallel(compilePugFast, copyAssets, generateSvgSprite, generatePngSprite),
+  parallel(compilePugFast, copyAssets),
   parallel(copyImg, writeSassImportsFile, writeJsRequiresFile),
   parallel(compileSass, buildJs),
   serve,
