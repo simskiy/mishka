@@ -95,7 +95,7 @@ function getFavicons(cb) {
           coast: false
             }
         }))
-    .pipe(dest(`${dir.build}favicon/out/`));
+    .pipe(dest(`${dir.src}favicon/out/`));
 }
 exports.getFavicons = getFavicons;
 

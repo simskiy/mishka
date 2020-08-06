@@ -29,8 +29,8 @@ let config = {
   ],
   'addAssets': {
     'src/img/**/*.{png,svg,jpg,jpeg}': 'img/',
-    'src/fonts/*{eot, svg, woff, ttf, woff2}': 'fonts/',
-    'src/favicon/out/*.{png,ico,svg,xml,webmanifest}': 'img/favicons',
+    'src/fonts/*{eot,svg,woff,ttf,woff2}': 'fonts/',
+    'src/favicon/out/*{png,ico,svg,xml,webmanifest}': 'img/favicons/',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
   },
   'dir': {
