@@ -4,9 +4,6 @@ block meta
   title Главная страница
   meta(name='description', content='')
 
-//- block append head
-//-   link(rel='stylesheet', href='css/some.css')
-
 block header
   +page-header()
     +logo('/')
@@ -21,7 +18,3 @@ block content
 block footer
   +page-footer()
     p footer
-
-
-//- block append page-bottom
-//-   script(src='js/some.js')

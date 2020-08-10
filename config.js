@@ -38,7 +38,10 @@ let config = {
     'src': 'src/',
     'build': 'build/',
     'blocks': 'src/blocks/'
-  }
+  },
+
 };
 
+
 module.exports = config;
+

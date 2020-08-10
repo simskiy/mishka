@@ -10229,6 +10229,11 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
+smart-grid@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/smart-grid/-/smart-grid-2.1.2.tgz#9f69cd0e3f8f95c2f4c616efa3630b1934377322"
+  integrity sha512-O5BYpBH5zMVMt12xAdbbCdQKwXpLWI4bqLJpaXRcNXHs4IfAVJd2K9XOilplRA7byBKva5Ysg1EtckwwqnoYeg==
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
