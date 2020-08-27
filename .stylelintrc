@@ -1,5 +1,5 @@
 {
-  "syntax": "scss",
+  "syntax": "sass",
   "plugins": [
     "stylelint-selector-bem-pattern",
     "stylelint-order"
@@ -304,34 +304,34 @@
     "declaration-block-no-shorthand-property-overrides": [true, {
       "message": "Свойство это неочевидно перебивает другое для селектора этого"
     }],
-    "declaration-block-semicolon-newline-after": ["always", {
-      "message": "После точки с запятой строки перенос необходим"
-    }],
-    "declaration-block-single-line-max-declarations": [1, {
-      "message": "На строке одной правилу одному место есть только"
-    }],
-    "declaration-block-trailing-semicolon": ["always", {
-      "message": "Свойство каждое точкой с запятой заканчивать хочешь ты"
-    }],
-    "block-closing-brace-empty-line-before": ["never", {
-      "message": "Перед «}» пустой строки быть не должно"
-    }],
-    "block-closing-brace-newline-after": ["always", {
-      "message": "После «}» переносу строки быть должно"
-    }],
-    "block-closing-brace-newline-before": ["always", {
-      "message": "Перед «}» переносу строки быть должно"
-    }],
+    #"declaration-block-semicolon-newline-after": ["always", {
+    #  "message": "После точки с запятой строки перенос необходим"
+    #}],
+    #"declaration-block-single-line-max-declarations": [1, {
+    #  "message": "На строке одной правилу одному место есть только"
+    #}],
+    #"declaration-block-trailing-semicolon": ["always", {
+    #  "message": "Свойство каждое точкой с запятой заканчивать хочешь ты"
+    #}],
+    #"block-closing-brace-empty-line-before": ["never", {
+    #  "message": "Перед «}» пустой строки быть не должно"
+    #}],
+    #"block-closing-brace-newline-after": ["always", {
+    #  "message": "После «}» переносу строки быть должно"
+    #}],
+    #"block-closing-brace-newline-before": ["always", {
+    #  "message": "Перед «}» переносу строки быть должно"
+    #}],
     # "block-no-empty": [true, {
     #   "severity": "warning",
     #   "message": "Пустые блоки писать не следует"
     # }],
-    "block-opening-brace-newline-after": ["always", {
-      "message": "После «{» перенос строки быть должен"
-    }],
-    "block-opening-brace-space-before": ["always", {
-      "message": "Перед «{» один пробел нужен"
-    }],
+    #"block-opening-brace-newline-after": ["always", {
+    #  "message": "После «{» перенос строки быть должен"
+    #}],
+    #"block-opening-brace-space-before": ["always", {
+    #  "message": "Перед «{» один пробел нужен"
+    #}],
     "selector-attribute-brackets-space-inside": ["never", {
       "message": "В селекторе атрибута пробел использовать не следует"
     }],

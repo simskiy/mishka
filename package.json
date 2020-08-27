@@ -12,6 +12,7 @@
     "test": "npm run test:pug && npm run test:style && npm run test:js",
     "test:pug": "glob-exec \"src/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\"",
     "test:style": "stylelint \"src/**/*.sass\" --syntax=sass",
+    "test:style --fix": "stylelint \"src/**/*.sass\" --syntax=sass --fix",
     "test:js": "eslint src/blocks/**/*.js src/js/**/*.js",
     "start": "gulp",
     "build": "gulp build",

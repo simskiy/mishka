@@ -3,39 +3,31 @@
   *:before,
   *:after
     background: transparent !important
-
-    // stylelint-disable-line  declaration-no-important
     color: #000 !important
-
-    // stylelint-disable-line  declaration-no-important
     box-shadow: none !important
-
-    // stylelint-disable-line  declaration-no-important
     text-shadow: none !important
-
-    // stylelint-disable-line  declaration-no-important
 
   a,
   a:visited
     text-decoration: underline !important
 
-    // stylelint-disable-line  declaration-no-important
+
 
   a[href]:after
-    content: " (" attr(href) ")"
+    content: "(' attr(href) ')"
 
-  a[href^='#']:after,
-  a[href^='javascript:']:after
+  a[href ^= '#']:after,
+  a[href ^= 'javascript:']:after
     content: ''
 
   abbr[title]:after
-    content: " (" attr(title) ")"
+    content: "(' attr(title) ')"
 
   pre,
   blockquote
     border: 1px solid #999 !important
 
-    // stylelint-disable-line  declaration-no-important
+
     page-break-inside: avoid
 
   thead
@@ -48,7 +40,7 @@
   img
     max-width: 100% !important
 
-    // stylelint-disable-line  declaration-no-important
+
 
   p,
   h2,
@@ -62,9 +54,6 @@
 
   table
     border-collapse: collapse !important
-
-    // stylelint-disable-line  declaration-no-important
-
     td,
     th
       background-color: #fff !important

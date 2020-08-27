@@ -1,2 +1,5 @@
-src/scss/style.scss
-src/blocks/sprite-png/sprite-png.scss
+src/scss/style.sass
+src/blocks/sprite-png/sprite-png.sass
+src/scss/print.sass
+src/scss/mixins.sass
+src/scss/mixins/_smart-grid.sass
