@@ -5,6 +5,8 @@
 .main-nav
   $block-name: &
   // #{$block-name}__element
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif
+
   &__list
     display: flex
     flex-direction: column
@@ -15,12 +17,11 @@
 
   &__item
     box-sizing: border-box
-    display: block
     height: 0
     padding-left: 23.4375vw
-
     transition-duration: 0.3s
     transition-timing-function: ease-out
+    font-size: 17px
 
     &--search,
     &--cart
@@ -28,7 +29,7 @@
 
       &::before
         content: ''
-        display: block
+        display: none
         position: absolute
         top: 31px
         left: 9vw
@@ -37,33 +38,115 @@
     &--search::before
       width: 18px
       height: 18px
-      background: '../img/svg/search.svg' no-repeat
+      background: url('../img/svg/search.svg') no-repeat
+      overflow: hidden
 
     &--cart::before
       width: 21px
       height: 18px
-      background: '../img/svg/cart.svg' no-repeat
+      background: url('../img/svg/cart.svg') no-repeat
 
     &--hidden
       display: none
+      background: none
 
   &__link
     display: none
     text-decoration: none
-    font-size: 17px
     line-height: 80px
     color: $black
     font-weight: 700
+
 /* stylelint-disable */
 .main-nav--open,
 .no-js .main-nav
-
   .main-nav__item
+    // display: block
     height: 80px
-    border-bottom: 1px solid ececec
+    border-bottom: 1px solid $border-color
     transition-duration: 0.3s
     transition-timing-function: ease-out
+
+    &--search::before,
+    &--cart::before
+      display: block
 
   .main-nav__link
     display: block
 /* stylelint-enable */
+
++md-block()
+  .main-nav
+    padding-left: 50px
+    padding-right: 50px
+    &__list
+      flex-direction: row
+      flex-wrap: wrap
+    &__link
+      display: block
+      line-height: 88px
+    &__item
+      height: 88px
+      padding-left: 0
+
+      &--search
+        box-sizing: border-box
+        position: relative
+        height: 88px
+        width: 10.677083vw
+        order: -2
+        padding: 0
+        margin-left: 41.796875vw
+        border-left: 1px solid $border-color
+        border-right: 1px solid $border-color
+
+        &:before
+          display: block
+          position: absolute
+          left: 4.296875vw
+          top: 37px
+
+        .main-nav__link
+          font-size: 0
+      &--cart
+        box-sizing: border-box
+        width: 34.375vw
+        padding: 0
+        // padding-left: 10.80723vw
+        height: 88px
+        order: -1
+        text-align: right
+
+        &:before
+          display: block
+          top: 35px
+          left: 4.0364583vw
+
+      &--catalog
+        font-size: 15px
+        height: 63px
+
+        .main-nav__link
+          line-height: 63px
+
+      &--order
+        font-size: 15px
+        margin-left: 37px
+        height: 63px
+
+        .main-nav__link
+          line-height: 63px
+
+      &--delivery
+        display: block
+        font-size: 15px
+        height: 63px
+        margin-left: auto
+
+        .main-nav__link
+          line-height: 63px
+          color: $text-gray
+          font-weight: 400
+
++xl-block()
+

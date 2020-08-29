@@ -35,8 +35,6 @@ let postCssPlugins = [
 // список импортов стилей
 // let scssImportsList = [];
 
-
-/* global module */
 let config = {
   'notGetBlocks': [
 
@@ -52,7 +50,8 @@ let config = {
   'addStyleBefore': [
     'src/scss/variables.scss',
     'src/scss/mixins.sass',
-    'src/scss/font.scss'
+    'src/scss/font.scss',
+    'src/scss/normalize.sass'
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
