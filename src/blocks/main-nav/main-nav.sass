@@ -61,7 +61,6 @@
 .main-nav--open,
 .no-js .main-nav
   .main-nav__item
-    // display: block
     height: 80px
     border-bottom: 1px solid $border-color
     transition-duration: 0.3s
@@ -79,20 +78,27 @@
   .main-nav
     padding-left: 50px
     padding-right: 50px
+
     &__list
       flex-direction: row
       flex-wrap: wrap
+
     &__link
-      display: block
-      line-height: 88px
+      display: inline
+      height: inherit
+
     &__item
+      display: flex
+      align-items: center
       height: 88px
       padding-left: 0
+
+      &--hidden
+        display: none
 
       &--search
         box-sizing: border-box
         position: relative
-        height: 88px
         width: 10.677083vw
         order: -2
         padding: 0
@@ -108,14 +114,15 @@
 
         .main-nav__link
           font-size: 0
+
       &--cart
         box-sizing: border-box
         width: 34.375vw
         padding: 0
-        // padding-left: 10.80723vw
-        height: 88px
         order: -1
-        text-align: right
+
+        .main-nav__link
+          margin-left: auto
 
         &:before
           display: block
@@ -149,4 +156,58 @@
           font-weight: 400
 
 +xl-block()
+  .main-nav
+    padding-left: 100px
+    padding-right: 100px
+
+    &__item
+      font-size: 17px
+
+      &--hidden
+        display: block
+
+      &--catalog
+        height: 88px
+        order: -4
+
+        .main-nav__link
+          line-height: 88px
+
+      &--order
+        order: -3
+        height: 88px
+        margin-left: 71px
+
+        .main-nav__link
+          line-height: 88px
+
+      &--cart
+        width: 264px
+
+        .main-nav__link
+          margin-left: auto
+          line-height: 88px
+
+        &::before
+          left: 31px
+
+      &--arrivals,
+      &--sale,
+      &--delivery
+        font-size: 15px
+        height: 63px
+
+        .main-nav__link
+          line-height: 63px
+
+      &--sale
+        margin-left: 60px
+
+      &--search
+        margin-left: 275px
+        width: 82px
+
+        &::before
+          top: 35px
+          left: 32px
 
