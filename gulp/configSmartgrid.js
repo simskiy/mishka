@@ -4,29 +4,29 @@ module.exports = {
   outputStyle: "sass",
   filename: "_smart-grid",
   columns: 12, // number of grid columns
-  offset: "1.875rem", // gutter width - 30px
+  offset: "30px", // gutter width - 30px
   mobileFirst: true,
   mixinNames: {
     container: "container"
   },
   container: {
-    fields: "0.9375rem", // side fields - 15px
+    fields: "15px", // side fields - 15px
   },
   breakPoints: {
     xs: {
-      width: "20rem" // 320px
+      width: "320px" // 320px
     },
     sm: {
-      width: "36rem" // 576px
+      width: "576px" // 576px
     },
     md: {
-      width: "48rem" // 768px
+      width: "768px" // 768px
     },
     lg: {
-      width: "62rem" // 992px
+      width: "992px" // 992px
     },
     xl: {
-      width: "75rem" // 1200px
+      width: "1150px" // 1150px
     }
   }
 };

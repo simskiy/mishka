@@ -6,7 +6,7 @@
 // Использование: node createBlock.js [имя блока] [доп. расширения через пробел]
 
 const fs = require('fs');
-const projectConfig = require('./config.js');
+const projectConfig = require('./gulp/config.js');
 
 const dir = projectConfig.dir;
 const mkdirp = require('mkdirp');

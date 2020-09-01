@@ -20,9 +20,9 @@ module.exports = function compileSass() {
     }))
     .pipe(debug({title: 'Compiles:'}))
     .pipe(sass({includePaths: [__dirname+'/','node_modules']}))
-    .pipe(postcss(config.postCssPlugins))
+    .pipe(postcss(config.postCssPlugins), console.log('---------- postcss run'))
     .pipe(csso({
-      restructure: false,
+      restructure: true,
     }))
     .pipe(dest(`${config.dir.build}/css`, { sourcemaps: '.' }))
     .pipe(browserSync.stream());

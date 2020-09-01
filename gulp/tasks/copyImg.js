@@ -7,11 +7,11 @@ const cpy = require('cpy');
 module.exports = function copyImg(cb) {
   let copiedImages = [];
   blocksFromHtml.forEach(function(block) {
-    let src = `${config.dir.img}${block}`;
+    let src = `${config.dir.blocks}${block}/img`;
     if(fileExist(src)) copiedImages.push(src);
   });
   config.alwaysAddBlocks.forEach(function(block) {
-    let src = `${config.dir.img}${block}`;
+    let src = `${config.dir.blocks}${block}/img`;
     if(fileExist(src)) copiedImages.push(src);
   });
   if(copiedImages.length) {

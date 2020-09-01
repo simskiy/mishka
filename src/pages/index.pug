@@ -30,9 +30,12 @@ block content
   h1.unvis Магазин вещей ручной работы
   section.banner
     h2.unvis Ассортимент
-    p Милые штуки ручной работы для дома
-    p Предметы интерьера
-    p Детские игрушки
+    p.banner__header Милые штуки ручной
+      span.banner__header--nowrap  работы для дома
+    a.banner__item.banner__item--interior(href='#') Предметы<br> интерьера
+    a.banner__item.banner__item--toys(href='#') Детские<br> игрушки
+
+  .zigzag
 
   section.product
     h2 Вязанные корзинки
@@ -71,7 +74,8 @@ block content
       span.unvis Переключить влево
     .arrow-right
       span.unvis Переключить вправо
-    button Написать
+    button
+      a(href='') Написать
 
   section.contact
     h2 Контакты
@@ -79,10 +83,9 @@ block content
     span.email-text info@mimimishkashop.ru
     span.adress адрес:
     span.adress-text г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8. офис 101
-
-  section.map
-    img(src='#', alt='Карта')
-    button Напишите нам
+    img.map(src='#', alt='Карта')
+    button
+      a(href='#') Напишите нам
 
 block footer
   +page-footer()

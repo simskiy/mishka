@@ -9,7 +9,7 @@ function changeLogo() {
     logo.src = 'img/svg/logo-tablet.svg';
     logo.width = '112';
   }
-  if (document.body.clientWidth >= 1200) {
+  if (document.body.clientWidth >= 1150) {
     logo.src = 'img/svg/logo-desktop.svg';
   }
 }
