@@ -19,7 +19,8 @@
     "lint-staged": "lint-staged",
     "favicon": "gulp getFavicons",
     "svgsprite": "gulp generateSvgSprite",
-    "pngsprite": "gulp generatePngSprite"
+    "pngsprite": "gulp generatePngSprite",
+    "pug": "gulp pug"
   },
   "browserslist": [
     "> 1%",

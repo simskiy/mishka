@@ -46,6 +46,7 @@ let config = {
     // 'sprite-svg',
     // 'sprite-png',
     // 'object-fit-polyfill',
+    'picture'
   ],
   'addStyleBefore': [
     'src/scss/variables.scss',

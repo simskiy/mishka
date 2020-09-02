@@ -49,5 +49,6 @@ exports.default = series(
 
 exports.getFavicons = series(getFavicons);
 exports.grid = series(createSmartGrid);
+exports.pug = series(writePugMixinsFile, compilePug);
 
 
