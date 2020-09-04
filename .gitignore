@@ -5,6 +5,7 @@ build/*
 src/pug/mixins.pug
 src/js/entry.js
 src/scss/style.scss
+src/scss/mixins/_smart-grid.scss
 
 src/blocks/sprite-svg/img/sprite.svg
 src/blocks/sprite-png/sprite-png.scss
