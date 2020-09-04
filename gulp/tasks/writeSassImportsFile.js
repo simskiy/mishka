@@ -13,11 +13,11 @@ module.exports = function writeSassImportsFile(cb) {
     newScssImportsList.push(src);
   });
   config.alwaysAddBlocks.forEach(function(blockName) {
-    if (fileExist(`${config.dir.blocks}${blockName}/${blockName}.sass`)) newScssImportsList.push(`${config.dir.blocks}${blockName}/${blockName}.sass`);
+    if (fileExist(`${config.dir.blocks}${blockName}/${blockName}.scss`)) newScssImportsList.push(`${config.dir.blocks}${blockName}/${blockName}.scss`);
   });
-  let allBlocksWithScssFiles = getDirectories('sass');
+  let allBlocksWithScssFiles = getDirectories('scss');
   allBlocksWithScssFiles.forEach(function(blockWithScssFile){
-    let url = `${config.dir.blocks}${blockWithScssFile}/${blockWithScssFile}.sass`;
+    let url = `${config.dir.blocks}${blockWithScssFile}/${blockWithScssFile}.scss`;
     if (blocksFromHtml.indexOf(blockWithScssFile) == -1) return
     if (newScssImportsList.indexOf(url) > -1) return;
     newScssImportsList.push(url);
@@ -30,11 +30,11 @@ module.exports = function writeSassImportsFile(cb) {
     let msg = `\n/*!*${config.msg.doNotEditMsg.replace(/\n /gm,'\n * ').replace(/\n\n$/,'\n */\n\n')}`;
     let styleImports = msg;
     newScssImportsList.forEach(function(src) {
-      styleImports += `@import "${src}"\n`;
+      styleImports += `@import "${src}";\n`;
     });
     styleImports += msg;
-    fs.writeFileSync(`${config.dir.src}scss/style.sass`, styleImports);
-    console.log('---------- Write new style.sass');
+    fs.writeFileSync(`${config.dir.src}scss/style.scss`, styleImports);
+    console.log('---------- Write new style.scss');
     scssImportsList = newScssImportsList;
   }
   cb();

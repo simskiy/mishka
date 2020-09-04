@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-  outputStyle: "sass",
+  outputStyle: "scss",
   filename: "_smart-grid",
   columns: 12, // number of grid columns
   offset: "30px", // gutter width - 30px

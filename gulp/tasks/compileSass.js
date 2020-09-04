@@ -9,7 +9,7 @@ const browserSync = require('browser-sync').create();
 
 module.exports = function compileSass() {
   const fileList = [
-    `${config.dir.src}scss/style.sass`,
+    `${config.dir.src}scss/style.scss`,
   ];
   return src(fileList, { sourcemaps: true })
     .pipe(plumber({
@@ -20,7 +20,7 @@ module.exports = function compileSass() {
     }))
     .pipe(debug({title: 'Compiles:'}))
     .pipe(sass({includePaths: [__dirname+'/','node_modules']}))
-    .pipe(postcss(config.postCssPlugins), console.log('---------- postcss run'))
+    .pipe(postcss(config.postCssPlugins))
     .pipe(csso({
       restructure: true,
     }))

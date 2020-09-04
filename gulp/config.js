@@ -50,10 +50,10 @@ let config = {
   ],
   'addStyleBefore': [
     'src/scss/variables.scss',
-    'src/scss/mixins.sass',
+    'src/scss/mixins.scss',
     'src/scss/font.scss',
-    'src/scss/normalize.sass',
-    'src/scss/global.sass',
+    'src/scss/normalize.scss',
+    'src/scss/global.scss',
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [

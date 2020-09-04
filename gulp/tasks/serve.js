@@ -70,18 +70,18 @@ module.exports = function serve() {
   ));
 
   // Стили Блоков: изменение
-  watch([`${config.dir.blocks}**/*.sass`], { events: ['change'], delay: 100 }, series(
+  watch([`${config.dir.blocks}**/*.scss`], { events: ['change'], delay: 100 }, series(
     compileSass,
   ));
 
   // Стили Блоков: добавление
-  watch([`${config.dir.blocks}**/*.sass`], { events: ['add'], delay: 100 }, series(
+  watch([`${config.dir.blocks}**/*.scss`], { events: ['add'], delay: 100 }, series(
     writeSassImportsFile,
     compileSass,
   ));
 
   // Стилевые глобальные файлы: все события
-  watch([`${config.dir.src}scss/**/*.sass`, `!${config.dir.src}scss/style.sass`], { events: ['all'], delay: 100 }, series(
+  watch([`${config.dir.src}scss/**/*.scss`, `!${config.dir.src}scss/style.scss`], { events: ['all'], delay: 100 }, series(
     compileSass,
   ));
 
