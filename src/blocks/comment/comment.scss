@@ -1,0 +1,81 @@
+// В этом файле должны быть стили для БЭМ-блока comment, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.comment {
+  $block-name: &; // #{$block-name}__element
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  &__title {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  &__review {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 35px;
+    margin-bottom: 0;
+    line-height: 30px;
+    color: $color-text;
+  }
+
+  &__contact {
+    width: 100%;
+    height: 45px;
+    margin-top: 35px;
+    font-size: 17px;
+  }
+
+  &__name {
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__email {
+    color: $color-text;
+    line-height: 30px;
+    font-weight: 400;
+  }
+
+  &__arrow-block {
+    margin-top: 35px;
+  }
+
+  &__arrow-left {
+    background-image: url('../img/svg/arrow-left.svg');
+    border-right-width: 0.5px;
+  }
+
+  &__arrow-right {
+    background-image: url('../img/svg/arrow-right.svg');
+    border-left-width: 0.5px;
+  }
+
+  &__button {
+    margin-top: 38px;
+    width: 100%;
+    height: 52px;
+  }
+}
+
+@include md-block {
+
+  .comment {
+    padding-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@include xl-block {
+
+  .comment {
+    padding-top: 90px;
+  }
+}

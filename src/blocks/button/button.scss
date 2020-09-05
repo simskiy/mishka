@@ -4,16 +4,30 @@
 
 .button {
   $block-name: &;
+  box-sizing: border-box;
+  border: 2px solid $border-gray;
 
   font-size: 18px;
   font-weight: 700;
   color: $text-gray;
-  border: 2px solid $border-gray;
   text-transform: uppercase;
   background: none;
 
   & a {
     color: inherit;
     text-decoration: none;
+  }
+
+  &-arrow {
+    box-sizing: border-box;
+    width: 50%;
+    height: 52px;
+    border: 1px solid $border-color;
+    padding: 0;
+    outline: none;
+    background-size: 50px 26px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
   }
 }

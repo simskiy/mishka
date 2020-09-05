@@ -62,7 +62,7 @@ block content
     section.feature
       h2.feature__title Коротко о нас:
       ul.feature__list
-        li.feature__item.feature__item--eco Экологически читые материалы
+        li.feature__item.feature__item--eco Экологически чиcтые материалы
         li.feature__item.feature__item--cost Скандинавский стиль по российской цене
         li.feature__item.feature__item--like Увеличивает лайки на фотографиях
         li.feature__item.feature__item--handmade Связано вручную с любовью и умилением
@@ -70,16 +70,18 @@ block content
         li.feature__item.feature__item--gift Поставляется в подарочной упаковке
 
     section.comment
-      h2 Отзывы
-      p Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!
-      p Анастасия Красильникова
-      p @misssssiskras
-      .arraw-left
-        span.unvis Переключить влево
-      .arrow-right
-        span.unvis Переключить вправо
-      button.button
-        a(href='') Написать
+      h2.comment__title Отзывы
+      p.comment__review Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!
+      .comment__contact
+        span.comment__name Анастасия Красильникова <br>
+        span.comment__email @misssssiskras
+      .comment__arrow-block
+        button.button-arrow.comment__arrow-left
+          span.unvis Переключить влево
+        button.button-arrow.comment__arrow-right
+          span.unvis Переключить вправо
+      button.button.comment__button
+        a.comment__link(href='') Написать
 
     section.contact
       h2 Контакты
