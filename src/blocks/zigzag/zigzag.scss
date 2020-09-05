@@ -10,7 +10,7 @@
     position: relative;
     top: -11px;
     height: 23px;
-    background: url('../img/svg/zigzag-fill.svg');
+    background: url('../img/svg/zigzag-fill.svg') repeat-x;
   }
 
   @include xl-block {
@@ -33,7 +33,9 @@
     }
 
     height: 6px;
-    background: url('../img/svg/zigzag-line.svg') no-repeat;
+    background: url('../img/svg/zigzag-line.svg') repeat-x;
+    // background-size: contain;
     margin-top: 35px;
+    // width: 100%;
   }
 }
