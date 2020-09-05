@@ -1,0 +1,39 @@
+// В этом файле должны быть стили для БЭМ-блока zigzag, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.zigzag {
+  $block-name: &;
+
+  @include md-block {
+    display: block;
+    position: relative;
+    top: -11px;
+    height: 23px;
+    background: url('../img/svg/zigzag-fill.svg');
+  }
+
+  @include xl-block {
+    top: -17px;
+    height: 34px;
+  }
+
+  display: none;
+
+  &-line {
+
+    @include md-block {
+      height: 17px;
+      margin-top: 52px;
+    }
+
+    @include xl-block {
+      height: 23px;
+      margin-top: 73px;
+    }
+
+    height: 6px;
+    background: url('../img/svg/zigzag-line.svg') no-repeat;
+    margin-top: 35px;
+  }
+}

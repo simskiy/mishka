@@ -29,9 +29,9 @@ $grid-gutter-width:           30px !default;
   $xxl-grid-gutter: $grid-gutter-width
 ) {
   display: block;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
-  width: 100%;
 
   @media (min-width: $screen-sm) {
     width: $container-sm;
@@ -186,9 +186,9 @@ $grid-gutter-width:           30px !default;
 //------------------------------------------------------------------------------
 
 @mixin get-width ($column: 1, $columns: $grid-columns) {
+  $width: (100% / $columns) * $column;
   flex: 0 0 $width;
   max-width: $width;
-  $width: (100% / $columns) * $column;
 }
 
 

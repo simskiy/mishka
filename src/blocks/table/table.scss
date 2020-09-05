@@ -1,0 +1,37 @@
+// В этом файле должны быть стили для БЭМ-блока table, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.table {
+  $block-name: &;
+
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  color: $text-gray;
+
+  &__row {
+    height: 40px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__name {
+    width: 37%;
+  }
+}
+
+@include md-block {
+
+  .table {
+    // display: inline-table
+    width: calc(50% - 20px);
+  }
+}
+
+
+@include xl-block {
+
+  .table {
+    width: 282px;
+  }
+}

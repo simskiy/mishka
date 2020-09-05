@@ -2,13 +2,13 @@
 
 @mixin field-text {
   display: inline-block;
-  margin: 0;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  background-color: #fff;
-  padding: $field-padding-vertical  $field-padding-horizontal;
   width: 100%;
   min-height: calc(#{$line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
+  margin: 0;
+  border: 1px solid $border-color;
+  padding: $field-padding-vertical  $field-padding-horizontal;
+  border-radius: $border-radius;
+  background-color: #fff;
   vertical-align: middle;
   line-height: $line-height;
   font-family: inherit;

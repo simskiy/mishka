@@ -12,7 +12,7 @@ const dir = projectConfig.dir;
 const mkdirp = require('mkdirp');
 
 const blockName = process.argv[2];
-const defaultExtensions = ['sass', 'img', 'bg-img']; // расширения по умолчанию
+const defaultExtensions = ['scss', 'img', 'bg-img']; // расширения по умолчанию
 const extensions = uniqueArray(defaultExtensions.concat(process.argv.slice(3)));
 
 // Если есть имя блока
@@ -20,7 +20,7 @@ if (blockName) {
   const dirPath = `${dir.blocks}${blockName}/`; // полный путь к создаваемой папке блока
 
   const made = mkdirp.sync(dirPath);
-  console.log(`[NTH] Создание папки: ${made}`);
+  console.log(`>>>>> Создание папки: ${made}`);
 
   // Обходим массив расширений и создаем файлы, если они еще не созданы
   extensions.forEach((extension) => {
@@ -28,8 +28,8 @@ if (blockName) {
     let fileContent = '';                                   // будущий контент файла
     let fileCreateMsg = '';                                 // будущее сообщение в консоли при создании файла
 
-    if (extension === 'sass') {
-      fileContent = `// В этом файле должны быть стили для БЭМ-блока ${blockName}, его элементов,\n// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...\n// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority\n\n.${blockName} \n  $block-name:                & // #{$block-name}__element\n`;
+    if (extension === 'scss') {
+      fileContent = `// В этом файле должны быть стили для БЭМ-блока ${blockName}, его элементов,\n// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...\n// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority\n\n.${blockName} {\n  $block-name: &; // #{$block-name}__element\n}\n`;
       // fileCreateMsg = '';
     }
 
@@ -49,9 +49,9 @@ if (blockName) {
       const imgFolder = `${dirPath}img/`;
       if (fileExist(imgFolder) === false) {
         const made = mkdirp.sync(imgFolder);
-        console.log(`[NTH] Создание папки: ${made}`);
+        console.log(`>>>>> Создание папки: ${made}`);
       } else {
-        console.log(`[NTH] Папка ${imgFolder} НЕ создана (уже существует) `);
+        console.log(`>>>>> Папка ${imgFolder} НЕ создана (уже существует) `);
       }
     }
 
@@ -59,32 +59,32 @@ if (blockName) {
       const imgFolder = `${dirPath}bg-img/`;
       if (fileExist(imgFolder) === false) {
         const made = mkdirp.sync(imgFolder);
-        console.log(`[NTH] Создание папки: ${made}`);
+        console.log(`>>>>> Создание папки: ${made}`);
       } else {
-        console.log(`[NTH] Папка ${imgFolder} НЕ создана (уже существует) `);
+        console.log(`>>>>> Папка ${imgFolder} НЕ создана (уже существует) `);
       }
     }
 
     if (fileExist(filePath) === false && extension !== 'img' && extension !== 'bg-img' && extension !== 'md') {
       fs.writeFile(filePath, fileContent, (err) => {
         if (err) {
-          return console.log(`[NTH] Файл НЕ создан: ${err}`);
+          return console.log(`>>>>> Файл НЕ создан: ${err}`);
         }
-        console.log(`[NTH] Файл создан: ${filePath}`);
+        console.log(`>>>>> Файл создан: ${filePath}`);
         if (fileCreateMsg) {
           console.warn(fileCreateMsg);
         }
       });
     }
     else if (extension !== 'img' && extension !== 'bg-img' && extension !== 'md') {
-      console.log(`[NTH] Файл НЕ создан: ${filePath} (уже существует)`);
+      console.log(`>>>>> Файл НЕ создан: ${filePath} (уже существует)`);
     }
     else if (extension === 'md') {
       fs.writeFile(`${dirPath}readme.md`, fileContent, (err) => {
         if (err) {
-          return console.log(`[NTH] Файл НЕ создан: ${err}`);
+          return console.log(`>>>>> Файл НЕ создан: ${err}`);
         }
-        console.log(`[NTH] Файл создан: ${dirPath}readme.md`);
+        console.log(`>>>>> Файл создан: ${dirPath}readme.md`);
         if (fileCreateMsg) {
           console.warn(fileCreateMsg);
         }
@@ -92,7 +92,7 @@ if (blockName) {
     }
   });
 } else {
-  console.log('[NTH] Отмена операции: не указан блок');
+  console.log('>>>>> Отмена операции: не указан блок');
 }
 
 

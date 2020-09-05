@@ -40,6 +40,7 @@
     "order/order": [
       # Кастомные свойства
       "custom-properties",
+      "dollar-variables",
       # Инклуды примесей
       {
         "type": "at-rule",
