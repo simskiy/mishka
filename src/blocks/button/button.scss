@@ -4,6 +4,7 @@
 
 .button {
   $block-name: &;
+  cursor: pointer;
   box-sizing: border-box;
   border: 2px solid $border-gray;
 
@@ -19,11 +20,19 @@
   }
 
   &-arrow {
+
+    @include md-block {
+      width: 52px;
+      height: 26px;
+    }
+
+    cursor: pointer;
     box-sizing: border-box;
     width: 50%;
     height: 52px;
     border: 1px solid $border-color;
     padding: 0;
+    font-size: 0;
     outline: none;
     background-size: 50px 26px;
     background-position: center center;
