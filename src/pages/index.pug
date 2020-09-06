@@ -84,20 +84,23 @@ block content
     .zigzag-line.zigzag-line--margin
 
     section.contact
-      h2 Контакты
-      span.email e-mail:
-      span.email-text info@mimimishkashop.ru
-      span.adress адрес:
-      span.adress-text г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8. офис 101
-      img.map(src='#', alt='Карта')
-      button.button
+      h2.contact__title Контакты
+      .contact__email
+        span.contact__email-title e-mail:
+        span.contact__email-text info@mimimishkashop.ru
+      .contact__adress
+        span.contact__adress-title адрес:
+        span.contact__adress-text г. Санкт-Петербург,<br>ул. Большая Конюшенная,<br>д. 19/8. офис 101
+      .contact__map
+        +picture-img('contact__map-img', 'map', 'Адрес на карте')
+      button.button.contact__button
         a(href='#') Напишите нам
 
 block footer
   +page-footer()
-    img(src='#', alt='Логотип Мишка')
-    ul.social-list
-      li.insta Инстаграмм
-      li.fb Фейсбук
-      li.tw Твиттер
-    span Разработанно
+    img.page-footer__logo(src='#', alt='Логотип Мишка')
+    ul.page-footer__list
+      li.page-footer__item.page-footer__item--insta Инстаграмм
+      li.page-footer__item.page-footer__item--fb Фейсбук
+      li.page-footer__item.page-footer__item--tw Твиттер
+    span.page-footer__htmlacademy Разработанно
