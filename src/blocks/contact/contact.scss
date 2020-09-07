@@ -3,26 +3,25 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .contact {
-  //$block-name: &; // #{$block-name}__element
+  display: grid;
   padding-top: 40px;
   padding-bottom: 40px;
+  grid-template-areas: 'title' 'email' 'adress' 'map' 'button';
 
   &__title {
-    display: inline-block;
+    grid-area: title;
     margin: 0;
-    padding-left: 30px;
     font-size: 18px;
-    line-height: 30px;
+    font-weight: 700;
+    padding-left: 30px;
   }
 
   &__email,
   &__adress {
-    display: flex;
     margin-left: 30px;
-    margin-right: 35px;
     font-size: 15px;
-    line-height: 30px;
     color: $color-text;
+    line-height: 30px;
 
     &-text {
       margin-left: 30px;
@@ -30,22 +29,8 @@
   }
 
   &__email {
+    grid-area: email;
     margin-top: 40px;
-
-    &-title {
-      white-space: nowrap;
-
-      &::before {
-        content: '';
-        display: none;
-        position: absolute;
-        top: -25px;
-        right: 55px;
-        width: 47px;
-        height: 81px;
-        background: url('../img/svg/flag.svg') no-repeat;
-      }
-    }
 
     &-text {
       border-bottom: 1px solid $color-corp;
@@ -53,63 +38,78 @@
   }
 
   &__adress {
-    margin-top: 30px;
+    grid-area: adress;
+    margin-top: 40px;
+
+    &-title {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &-text {
+      display: inline-block;
+    }
   }
 
   &__map {
+    grid-area: map;
     margin-top: 40px;
+    height: 457px;
+    overflow: hidden;
 
-    &-img img {
+    & img {
       display: block;
       width: 100%;
     }
   }
 
   &__button {
-    box-sizing: border-box;
-    display: block;
-    width: 81.25%;
+    grid-area: button;
     height: 52px;
-    margin: 40px auto 0;
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 }
 
 @include md-block {
 
   .contact {
-    padding-top: 64px;
+    padding-top: 70px;
     padding-bottom: 57px;
+    max-height: 813px;
+    /* stylelint-disable */
+    grid-template-areas: 'title title'
+                         'email adress'
+                         'map map'
+                         'button button';
+    /* stylelint-enable */
 
     &__title {
-      display: block;
       position: relative;
-      font-size: 43px;
       padding-left: 50px;
-      line-height: 43px;
-      margin-bottom: 60px;
+      font-size: 43px;
 
-      &::before {
+      &::after {
+        content: '';
         display: block;
+        position: absolute;
+        top: -16px;
+        right: 55px;
+        width: 47px;
+        height: 81px;
+        background: url('../img/svg/flag.svg') no-repeat;
       }
     }
 
-    &__email,
-    &__adress {
-      box-sizing: border-box;
-      display: inline-block;
-      width: 49%;
-      font-size: 17px;
-    }
-
     &__email {
-      margin: 0;
-      padding-left: 50px;
-      vertical-align: top;
+      margin-left: 50px;
+      margin-top: 50px;
     }
 
     &__adress {
-      margin: 0;
-      padding-right: 50px;
+      margin-top: 50px;
+      margin-left: 0;
     }
 
     &__map {
@@ -117,8 +117,51 @@
     }
 
     &__button {
-      width: 230px;
       margin-top: 55px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 230px;
+    }
+  }
+}
+
+@include xl-block {
+
+  .contact {
+    padding-top: 71px;
+    padding-bottom: 105px;
+    grid-template-columns: repeat(2, 1fr);
+    /* stylelint-disable */
+    grid-template-areas: 'title map'
+                         'email map'
+                         'adress map'
+                         'button map';
+    /* stylelint-enable */
+
+    &__title {
+      font-size: 53px;
+      padding-top: 70px;
+      padding-left: 175px;
+
+      &::after {
+        top: 62px;
+        left: 64px;
+      }
+    }
+
+    &__email,
+    &__adress {
+      font-size: 17px;
+      padding-left: 175px;
+      margin-left: 0;
+    }
+
+    &__adress {
+      margin-top: 40px;
+    }
+
+    &__map {
+      margin-top: 0;
     }
   }
 }
