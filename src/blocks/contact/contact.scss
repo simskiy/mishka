@@ -34,6 +34,17 @@
 
     &-title {
       white-space: nowrap;
+
+      &::before {
+        content: '';
+        display: none;
+        position: absolute;
+        top: -25px;
+        right: 55px;
+        width: 47px;
+        height: 81px;
+        background: url('../img/svg/flag.svg') no-repeat;
+      }
     }
 
     &-text {
@@ -60,5 +71,54 @@
     width: 81.25%;
     height: 52px;
     margin: 40px auto 0;
+  }
+}
+
+@include md-block {
+
+  .contact {
+    padding-top: 64px;
+    padding-bottom: 57px;
+
+    &__title {
+      display: block;
+      position: relative;
+      font-size: 43px;
+      padding-left: 50px;
+      line-height: 43px;
+      margin-bottom: 60px;
+
+      &::before {
+        display: block;
+      }
+    }
+
+    &__email,
+    &__adress {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 49%;
+      font-size: 17px;
+    }
+
+    &__email {
+      margin: 0;
+      padding-left: 50px;
+      vertical-align: top;
+    }
+
+    &__adress {
+      margin: 0;
+      padding-right: 50px;
+    }
+
+    &__map {
+      margin-top: 60px;
+    }
+
+    &__button {
+      width: 230px;
+      margin-top: 55px;
+    }
   }
 }
