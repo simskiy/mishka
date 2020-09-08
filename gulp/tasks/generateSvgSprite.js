@@ -9,7 +9,7 @@ const rename = require('gulp-rename');
 // Готовый спрайт генерируется в папку img/svg
 
 module.exports = function generateSvgSprite(cb) {
-  let spriteSvgPath = `${config.dir.src}img/sprite-svg/svg/`;
+  let spriteSvgPath = `${config.dir.src}sprite/svg/`;
   if(config.alwaysAddBlocks.indexOf('sprite-svg') > -1 && fileExist(spriteSvgPath)) {
     return src(spriteSvgPath + '*.svg')
       .pipe(svgmin(function () {

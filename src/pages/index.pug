@@ -85,24 +85,25 @@ block content
 
     section.contact
       h2.contact__title Контакты
-      <br>
       .contact__email
         span.contact__email-title e-mail:
         span.contact__email-text info@mimimishkashop.ru
-      <br>
+
       .contact__adress
         span.contact__adress-title адрес:
         span.contact__adress-text г. Санкт-Петербург,<br>ул. Большая Конюшенная,<br>д. 19/8. офис 101
       .contact__map
+        <iframe class='contact__map--interactive' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d816.392579482913!2d30.3219257048305!3d59.938506451414625!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1599534432585!5m2!1sru!2sru" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         +picture-img('contact__map-img', 'map', 'Адрес на карте')
       button.button.contact__button
         a(href='#') Напишите нам
 
 block footer
   +page-footer()
-    img.page-footer__logo(src='#', alt='Логотип Мишка')
     ul.page-footer__list
       li.page-footer__item.page-footer__item--insta Инстаграмм
       li.page-footer__item.page-footer__item--fb Фейсбук
       li.page-footer__item.page-footer__item--tw Твиттер
     span.page-footer__htmlacademy Разработанно
+      a
+        img(src='../img/svg/htmlacademy.svg', alt="html academy")

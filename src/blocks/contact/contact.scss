@@ -54,11 +54,15 @@
   &__map {
     grid-area: map;
     margin-top: 40px;
-    height: 457px;
+    height: 450px;
     overflow: hidden;
 
     & img {
       display: block;
+      width: 100%;
+    }
+
+    &--interactive {
       width: 100%;
     }
   }
