@@ -15,30 +15,28 @@
   &__list {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 50%;
     margin: 0;
     padding-left: 20px;
     padding-right: 20px;
     list-style: none;
-    justify-content: space-between;
   }
 
   &__item {
     font-size: 0;
 
     &--insta {
-      background: url('../img/svg/insta.svg') no-repeat;
       width: 22px;
       height: 21px;
     }
+
     &--fb {
-      background: url('../img/svg/fb.svg') no-repeat;
       width: 15px;
       height: 28px;
     }
 
     &--tw {
-      background: url('../img/svg/twitter.svg') no-repeat;
       width: 23px;
       height: 20px;
     }

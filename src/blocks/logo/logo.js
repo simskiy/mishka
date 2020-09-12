@@ -1,16 +1,17 @@
-let logo = document.querySelector('.logo > img');
+let logo = document.querySelector('.logo > svg');
+let img = document.querySelector('#logo__img');
 
 function changeLogo() {
   if (document.body.clientWidth > 0) {
-    logo.src = 'img/svg/logo-mobile.svg';
-    logo.width = '86';
+    img.attributes['xlink:href'].value = 'img/svg/index-sprite.svg#logo-mobile';
+    logo.attributes.width.value = '86';
   }
   if (document.body.clientWidth >= 768) {
-    logo.src = 'img/svg/logo-tablet.svg';
-    logo.width = '112';
+    img.attributes['xlink:href'].value = 'img/svg/index-sprite.svg#logo-tablet';
+    logo.attributes.width.value = '112';
   }
   if (document.body.clientWidth >= 1150) {
-    logo.src = 'img/svg/logo-desktop.svg';
+    img.attributes['xlink:href'].value = 'img/svg/index-sprite.svg#logo-desktop';
   }
 }
 

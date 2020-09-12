@@ -19,8 +19,6 @@ const compilePugFast = require('./gulp/tasks/compilePugFast.js');
 const copyAssets = require('./gulp/tasks/copyAssets.js');
 const copyImg = require('./gulp/tasks/copyImg.js');
 const config = require('./gulp/config.js');
-const generateSvgSprite = require('./gulp/tasks/generateSvgSprite.js');
-const generatePngSprite = require('./gulp/tasks/generatePngSprite.js');
 const writeSassImportsFile = require('./gulp/tasks/writeSassImportsFile.js');
 const compileSass = require('./gulp/tasks/compileSass.js');
 const writeJsRequiresFile = require('./gulp/tasks/writeJsRequiresFile.js');
@@ -28,6 +26,7 @@ const buildJs = require('./gulp/tasks/BuildJs.js');
 const serve = require('./gulp/tasks/serve.js');
 const clearBuildDir = require('./gulp/tasks/clearBuildDir.js');
 const createSmartGrid = require('./gulp/tasks/createSmartGrid.js');
+const generateSvgSprite = require('./gulp/tasks/generateSvgSprite.js');
 
 global.scssImportsList = []; // список импортов стилей
 global.blocksFromHtml = Object.create(config.alwaysAddBlocks);
@@ -50,5 +49,6 @@ exports.default = series(
 exports.getFavicons = series(getFavicons);
 exports.grid = series(createSmartGrid);
 exports.pug = series(writePugMixinsFile, compilePug);
+exports.spriteSvg = series(generateSvgSprite);
 
 

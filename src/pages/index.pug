@@ -1,5 +1,8 @@
 extends ../pug/layout.pug
 
+block variables
+  - var spriteSvg = 'img/svg/index-sprite.svg';
+
 block meta
   title Главная страница
 
@@ -7,7 +10,8 @@ block header
   +page-header()
     .logo-wrapper
       +logo()
-        img(width='86', src='img/svg/logo-mobile.svg', alt='Логотип Mishka')
+        //- img(width='86', src='img/svg/logo-mobile.svg', alt='Логотип Mishka')
+        +svg-img('logo__img', 'Логотип Mishka', spriteSvg, 'logo-mobile')(width=86)
       +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
     .nav-wrapper
       nav.main-nav#nav
@@ -18,8 +22,10 @@ block header
             a.main-nav__link(href='#') Вязание на заказ
           li.main-nav__item.main-nav__item--search
             a.main-nav__link(href='#') Поиск по сайту
+              +svg-bg('main-nav__search-img', spriteSvg, 'search')
           li.main-nav__item.main-nav__item--cart
             a.main-nav__link(href='#') Корзина: пока пуста
+              +svg-bg('main-nav__cart-img', spriteSvg, 'cart')
           li.main-nav__item.main-nav__item--hidden.main-nav__item--arrivals
             a.main-nav__link(href='#') Новые поступления
           li.main-nav__item.main-nav__item--hidden.main-nav__item--sale
@@ -102,8 +108,14 @@ block footer
   +page-footer()
     ul.page-footer__list
       li.page-footer__item.page-footer__item--insta Инстаграмм
+        a(href='#')
+          +svg-img('', 'Инстаграмм', spriteSvg, 'insta')(width=22, height=21)
       li.page-footer__item.page-footer__item--fb Фейсбук
+        a(href='#')
+          +svg-img('', 'Фейсбук', spriteSvg, 'fb')(width=15, height=28)
       li.page-footer__item.page-footer__item--tw Твиттер
+        a(href='#')
+          +svg-img('', 'Твиттер', spriteSvg, 'twitter')(width=23, height=20)
     span.page-footer__htmlacademy Разработанно
-      a
-        img(src='../img/svg/htmlacademy.svg', alt="html academy")
+      a(href='#')
+        +svg-img('', 'HTML Academy', spriteSvg, 'htmlacademy')(width=27, height=34)
