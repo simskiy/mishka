@@ -12,6 +12,24 @@
   padding-left: 69px;
   padding-right: 69px;
 
+  .page-footer__htmlacademy-ico {
+    color: $color-corp;
+  }
+
+  &__logo {
+    display: none;
+    cursor: pointer;
+    color: $black;
+
+    &:hover {
+      color: $color-ico;
+    }
+
+    &:active {
+      color: rgba($color-ico, 0.3);
+    }
+  }
+
   &__list {
     display: flex;
     align-items: center;
@@ -42,12 +60,68 @@
     }
   }
 
+  &__link {
+    color: $black;
+
+    &:hover {
+      color: $color-ico;
+    }
+
+    &:active {
+      color: rgba($color-ico, 0.3);
+    }
+  }
+
   &__htmlacademy {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 50%;
+    justify-content: space-between;
+    width: 182px;
+    margin: auto;
     font-size: 19px;
     font-weight: 700;
+    color: $black;
+    text-decoration: none;
+
+    &:hover .page-footer__htmlacademy-ico {
+      color: $color-ico;
+    }
+
+    &:active .page-footer__htmlacademy-ico {
+      color: rgba($color-ico, 0.3);
+    }
+  }
+}
+
+@include md-block {
+
+  .page-footer {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 143px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    &__logo {
+      display: block;
+    }
+
+    &__list {
+      width: 140px;
+    }
+
+    &__htmlacademy {
+      margin: 0;
+    }
+  }
+}
+
+@include xl-block {
+
+  .page-footer {
+    padding-left: 100px;
+    padding-right: 100px;
   }
 }

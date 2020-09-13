@@ -4,15 +4,25 @@
 
 .button {
   $block-name: &;
-  cursor: pointer;
   box-sizing: border-box;
   border: 2px solid $border-gray;
-
+  cursor: pointer;
   font-size: 18px;
   font-weight: 700;
   color: $text-gray;
   text-transform: uppercase;
   background: none;
+  outline: none;
+
+  &:hover {
+    background-color: $border-gray;
+    color: $white;
+  }
+
+  &:active {
+    background-color: $border-gray;
+    color: rgba($white, 0.3);
+  }
 
   & a {
     color: inherit;
@@ -26,12 +36,13 @@
       height: 26px;
     }
 
-    cursor: pointer;
     box-sizing: border-box;
     width: 50%;
     height: 52px;
     border: 1px solid $border-color;
     padding: 0;
+
+    cursor: pointer;
     font-size: 0;
     outline: none;
     background-size: 50px 26px;

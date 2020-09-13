@@ -37,6 +37,7 @@
   }
 
   &__item {
+    // position: relative;
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -48,6 +49,19 @@
     font-size: 19px;
     line-height: 24px;
     background-repeat: no-repeat;
+    transition: height 0.2s ease-out 0s;
+
+    &:hover {
+      height: 108px;
+      padding-bottom: 35px;
+      margin-bottom: -5px;
+      transform: translateY(-5px);
+      background-position-y: 20px;
+    }
+
+    &:active {
+      color: rgba(#ffffff, 0.3);
+    }
 
     &--interior {
       background-image: url('../img/svg/interior.svg');
@@ -100,6 +114,12 @@
       padding: 35px;
       font-size: 20px;
       line-height: 30px;
+      transition: height 0.2s ease-out 0s;
+
+      &:hover {
+        height: 124px;
+        padding-bottom: 40px;
+      }
 
       &--interior,
       &--toys {

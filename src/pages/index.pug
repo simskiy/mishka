@@ -9,9 +9,8 @@ block meta
 block header
   +page-header()
     .logo-wrapper
-      +logo()
-        //- img(width='86', src='img/svg/logo-mobile.svg', alt='Логотип Mishka')
-        +svg-img('logo__img', 'Логотип Mishka', spriteSvg, 'logo-mobile')(width=86)
+      a.logo
+        +svg-img('logo__img', 'Логотип Mishka', spriteSvg, 'logo-mobile')(width=86, height=35)
       +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
     .nav-wrapper
       nav.main-nav#nav
@@ -42,7 +41,7 @@ block content
       a.banner__item.banner__item--interior(href='#') Предметы<br> интерьера
       a.banner__item.banner__item--toys(href='#') Детские<br> игрушки
 
-    .zigzag
+    .zigzag(aria-hidden=true)
 
     section.product
       h2.product__title Вязаные корзинки
@@ -63,7 +62,7 @@ block content
       span.product__cost Цена: 990 руб.
       button.button.product__button Заказать
 
-    .zigzag-line
+    .zigzag-line(aria-hidden='true')
 
     section.feature
       h2.feature__title Коротко о нас:
@@ -93,13 +92,14 @@ block content
       button.button.comment__button
         a.comment__link(href='') Написать
 
-    .zigzag-line.zigzag-line--margin
+    .zigzag-line.zigzag-line--margin(aria-hidden='true')
 
     section.contact
       h2.contact__title Контакты
       .contact__email
         span.contact__email-title e-mail:
-        span.contact__email-text info@mimimishkashop.ru
+        span.contact__email-text
+          a.contact__email-link(href='mailto:info@mimimishkashop.ru') info@mimimishkashop.ru
 
       .contact__adress
         span.contact__adress-title адрес:
@@ -112,16 +112,17 @@ block content
 
 block footer
   +page-footer()
+    a
+      +svg-img('page-footer__logo','Mishka', spriteSvg, 'logo-footer')(width=102, height=34)
     ul.page-footer__list
       li.page-footer__item.page-footer__item--insta Инстаграмм
-        a(href='#')
+        a.page-footer__link(href='#')
           +svg-img('', 'Инстаграмм', spriteSvg, 'insta')(width=22, height=21)
       li.page-footer__item.page-footer__item--fb Фейсбук
-        a(href='#')
+        a.page-footer__link(href='#')
           +svg-img('', 'Фейсбук', spriteSvg, 'fb')(width=15, height=28)
       li.page-footer__item.page-footer__item--tw Твиттер
-        a(href='#')
+        a.page-footer__link(href='#')
           +svg-img('', 'Твиттер', spriteSvg, 'twitter')(width=23, height=20)
-    span.page-footer__htmlacademy Разработанно
-      a(href='#')
-        +svg-img('', 'HTML Academy', spriteSvg, 'htmlacademy')(width=27, height=34)
+    a.page-footer__htmlacademy(href='#') Разработанно
+      +svg-img('page-footer__htmlacademy-ico', 'HTML Academy', spriteSvg, 'htmlacademy')(width=27, height=34)

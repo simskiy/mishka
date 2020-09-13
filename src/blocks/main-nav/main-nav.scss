@@ -3,7 +3,7 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .main-nav {
-  //$block-name: &;
+  $block-name: &;
   // #{$block-name}__element
 
   &__search-img,
@@ -40,10 +40,31 @@
     box-sizing: border-box;
     position: relative;
     height: 0;
+    cursor: pointer;
     padding-left: 23.4375vw;
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
     font-size: 17px;
+
+    &:hover {
+      opacity: 0.6;
+
+      & .main-nav__cart-img,
+      .main-nav__search-img {
+        color: $color-corp;
+        opacity: 2;
+      }
+    }
+
+    &:active {
+      opacity: 0.3;
+
+      & .main-nav__cart-img,
+      .main-nav__search-img {
+        color: $color-corp;
+        opacity: 0.5;
+      }
+    }
 
     &--hidden {
       display: none;
