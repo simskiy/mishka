@@ -68,12 +68,18 @@ block content
     section.feature
       h2.feature__title Коротко о нас:
       ul.feature__list
-        li.feature__item.feature__item--eco Экологически чиcтые материалы
-        li.feature__item.feature__item--cost Скандинавский стиль по российской цене
-        li.feature__item.feature__item--like Увеличивает лайки на фотографиях
-        li.feature__item.feature__item--handmade Связано вручную с любовью и умилением
-        li.feature__item.feature__item--domestic Поддержка отечественного производителя
-        li.feature__item.feature__item--gift Поставляется в подарочной упаковке
+        li.feature__item Экологически чиcтые материалы
+          +svg-bg('feature__item-img feature__item-eco', spriteSvg, 'icon-1')(width=32, height=37)
+        li.feature__item Скандинавский стиль по российской цене
+          +svg-bg('feature__item-img feature__item-cost', spriteSvg, 'icon-2')(width=47, height=27)
+        li.feature__item Увеличивает лайки на фотографиях
+          +svg-bg('feature__item-img feature__item-like', spriteSvg, 'icon-3')(width=34, height=27)
+        li.feature__item Связано вручную с любовью и умилением
+          +svg-bg('feature__item-img feature__item-handmade', spriteSvg, 'icon-4')(width=35, height=34)
+        li.feature__item Поддержка отечественного производителя
+          +svg-bg('feature__item-img feature__item-domestic', spriteSvg, 'icon-5')(width=55, height=23)
+        li.feature__item Поставляется в подарочной упаковке
+          +svg-bg('feature__item-img feature__item-gift', spriteSvg, 'icon-6')(width=33, height=32)
 
     section.comment
       h2.comment__title Отзывы

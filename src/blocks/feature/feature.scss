@@ -4,6 +4,8 @@
 
 .feature {
   $block-name: &; // #{$block-name}__element
+  $line-height: 20px;
+
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
@@ -23,80 +25,53 @@
   }
 
   &__item {
-    $line-height: 20px;
     position: relative;
     width: 96%;
     font-size: 17px;
     line-height: $line-height;
     font-weight: 700;
     padding-top: 85px;
+  }
 
-    &--eco {
+  &__item-img {
+    position: absolute;
+    left: 0;
+  }
 
-      &::before {
-        bottom: $line-height * 2 + 20px;
-        width: 32px;
-        height: 37px;
-        background: url('../img/svg/icon-1.svg') no-repeat;
-      }
-    }
+  &__item-eco {
+    bottom: $line-height * 2 + 20px;
+    width: 32px;
+    height: 37px;
+  }
 
-    &--cost {
+  &__item-cost {
+    bottom: $line-height * 2 + 28px;
+    width: 47px;
+    height: 27px;
+  }
 
-      &::before {
-        bottom: $line-height * 2 + 28px;
-        width: 47px;
-        height: 27px;
-        background: url('../img/svg/icon-2.svg') no-repeat;
-      }
-    }
+  &__item-like {
+    bottom: $line-height * 2 + 23px;
+    width: 34px;
+    height: 27px;
+  }
 
-    &--like {
+  &__item-handmade {
+    bottom: $line-height * 2 + 20px;
+    width: 35px;
+    height: 34px;
+  }
 
-      &::before {
-        bottom: $line-height * 2 + 23px;
-        width: 34px;
-        height: 27px;
-        background: url('../img/svg/icon-3.svg') no-repeat;
-      }
-    }
+  &__item-domestic {
+    bottom: $line-height * 2 + 30px;
+    width: 55px;
+    height: 23px;
+  }
 
-    &--handmade {
-
-      &::before {
-        bottom: $line-height * 2 + 20px;
-        width: 35px;
-        height: 34px;
-        background: url('../img/svg/icon-4.svg') no-repeat;
-      }
-    }
-
-    &--domestic {
-
-      &::before {
-        bottom: $line-height * 2 + 30px;
-        width: 55px;
-        height: 23px;
-        background: url('../img/svg/icon-5.svg') no-repeat;
-      }
-    }
-
-    &--gift {
-
-      &::before {
-        bottom: $line-height * 2 + 23px;
-        width: 33px;
-        height: 32px;
-        background: url('../img/svg/icon-6.svg') no-repeat;
-      }
-    }
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-    }
+  &__item-gift {
+    bottom: $line-height * 2 + 23px;
+    width: 33px;
+    height: 32px;
   }
 }
 
@@ -126,30 +101,30 @@
       line-height: $line-height;
       padding-top: 110px;
       padding-right: 40px;
+    }
 
-      &--eco::before {
-        bottom: $line-height * 2 + 20px;
-      }
+    &__item-eco {
+      bottom: $line-height * 2 + 20px;
+    }
 
-      &--cost::before {
-        bottom: $line-height * 2 + 28px;
-      }
+    &__item-cost {
+      bottom: $line-height * 2 + 28px;
+    }
 
-      &--like::before {
-        bottom: $line-height * 2 + 23px;
-      }
+    &__item-like {
+      bottom: $line-height * 2 + 23px;
+    }
 
-      &--handmade::before {
-        bottom: $line-height * 2 + 20px;
-      }
+    &__item-handmade {
+      bottom: $line-height * 2 + 20px;
+    }
 
-      &--domestic::before {
-        bottom: $line-height * 2 + 30px;
-      }
+    &__item-domestic {
+      bottom: $line-height * 2 + 30px;
+    }
 
-      &--gift::before {
-        bottom: $line-height * 2 + 23px;
-      }
+    &__item-gift {
+      bottom: $line-height * 2 + 23px;
     }
   }
 }
