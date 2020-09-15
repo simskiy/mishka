@@ -5,9 +5,10 @@
 .button {
   $block-name: &;
   box-sizing: border-box;
+  height: 52px;
   border: 2px solid $border-gray;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: $text-gray;
   text-transform: uppercase;
@@ -38,7 +39,6 @@
 
     box-sizing: border-box;
     width: 50%;
-    height: 52px;
     border: 1px solid $border-color;
     padding: 0;
 

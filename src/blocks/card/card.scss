@@ -1,0 +1,79 @@
+// В этом файле должны быть стили для БЭМ-блока card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card {
+  $block-name: &; // #{$block-name}__element
+  border: 1px solid $border-color;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 6px 10px 0 rgba($black, 0.2);
+    transform: translate(-6px, -6px);
+
+    & .card__title {
+      opacity: 0.6;
+    }
+
+    & .card__cart-img {
+      opacity: 1;
+      color: $color-corp;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px 0 rgba($black, 0.2);
+    transform: translate(-3px, -3px);
+
+    & .card__title {
+      opacity: 0.3;
+    }
+
+    & .card__cart-img {
+      color: rgba($color-corp, 0.3);
+    }
+  }
+
+
+  &__link {
+    color: $black;
+    text-decoration: none;
+  }
+
+  &__img img {
+    display: block;
+    width: 100%;
+  }
+
+  &__info {
+    margin: 0;
+    padding: 28px;
+  }
+
+  &__title {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  &__data {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 25px;
+    font-size: 15px;
+    font-weight: 700;
+    border-top: 1px solid $border-color;
+  }
+
+  &__cart-img {
+    margin-left: auto;
+    opacity: 0.2;
+  }
+}

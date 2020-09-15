@@ -16,7 +16,7 @@ block header
       nav.main-nav#nav
         ul.main-nav__list
           li.main-nav__item.main-nav__item--catalog
-            a.main-nav__link(href='#') Каталог товаров
+            a.main-nav__link(href='catalog.html') Каталог товаров
           li.main-nav__item.main-nav__item--order
             a.main-nav__link(href='#') Вязание на заказ
           li.main-nav__item.main-nav__item--search
@@ -58,7 +58,7 @@ block content
           tr.table__row
             td.table__name Высота:
             td.table__text 15 см
-      +picture-img('product__img', 'triple-set', 'Вязанные корзинки')
+      +picture-retina('product__img', 'triple-set', 'Вязанные корзинки')
       span.product__cost Цена: 990 руб.
       button.button.product__button Заказать
 
