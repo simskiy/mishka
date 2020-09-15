@@ -16,10 +16,10 @@ block header
       nav.main-nav#nav
         ul.main-nav__list
           li.main-nav__item.main-nav__item--catalog
-            a.main-nav__link
+            a.main-nav__link(href='catalog.html')
               span.main-nav__link-text Каталог товаров
           li.main-nav__item.main-nav__item--order
-            a.main-nav__link(href='order.html')
+            a.main-nav__link
               span.main-nav__link-text Вязание на заказ
           li.main-nav__item.main-nav__item--search
             a.main-nav__link(href='#')
@@ -40,48 +40,76 @@ block header
               span.main-nav__link-text Бесплатная доставка по России
 
 block content
-  +page-main()
-    section.catalog
-      h1.catalog__title Каталог товаров
+  h1 Вязание на заказ
+  p Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.
+  form.form(action='get')
 
-      .zigzag(aria-hidden='true')
+    fieldset
+      legend Тип
+      ul
+        li
+          input#type(type='radio', name='type', value='interior', checked)
+          label(for='type') Аксессуар для интерьера
+        li
+          input#type(type='radio', name='type', value='toy')
+          label(for='type') Детская игрушка
 
-      ul.catalog__list
-        li.catalog__item.card
-          a.card__link(href='#')
-            +picture-retina('card__img', 'photo-1', 'Зайчик-попрыгайчик')
-            p.card__info
-              span.card__title Зайчик попрыгайчик <br>
-              span.card__data Рост 30см, вес 200 г<br>
-              span.card__price 1200 руб.
-                +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
-        li.catalog__item.card
-          a.card__link(href='#')
-            +picture-retina('card__img', 'photo-2', 'Корзинка для белья')
-            p.card__info
-              span.card__title Корзинка для белья <br>
-              span.card__data Диаметр 15 см, высота 10 см<br>
-              span.card__price 690 руб.
-                +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
-        li.catalog__item.card
-          a.card__link(href='#')
-            +picture-retina('card__img', 'photo-3', 'Большая корзинка для игрушек')
-            p.card__info
-              span.card__title Большая корзинка для игрушек <br>
-              span.card__data Диаметр 30 см, высота 30 см<br>
-              span.card__price 1500 руб.
-                +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
-        li.catalog__item.prod
-          span.prod__title
-            +svg-bg('prod__title-ico', spriteSvg, 'video')(width=32, height=22)
-            | Процесс производства
-          .prod__video
-            +picture-img('','video', 'Видео процесса производства')
-            +svg-bg('prod__video-play', spriteSvg, 'play')(width=101, height=77)
-          p.prod__info
-            span.prod__text По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
-            a(href='#')
-             button.button.prod__button Сделать заказ
+    fieldset
+      legend Цвет
+      ul
+        li
+          input#white(type='checkbox', name='color', value='white', checked)
+          label(for='white') Белый
+        li
+          input#gray(type='checkbox', name='color', value='gray', checked)
+          label(for='gray') Серый
+        li
+          input#tyffany(type='checkbox', name='color', value='tyffany')
+          label(for='tyffany') &#171;Тиффани&#187;
+        li
+          input#black(type='checkbox', name='color', value='black')
+          label(for='black') Черный
+        li
+          input#pink(type='checkbox', name='color', value='pink')
+          label(for='pink') Розовый
+        li
+          input#orange(type='checkbox', name='color', value='orange')
+          label(for='orange') Оранжевый
+
+    fieldset
+      legend ФИО
+      ul
+        li
+          label(for='username') Имя
+          input#name(type='text', name='name', required, placeholder='Введите Ваше имя*')
+        li
+          label(for='sirname') Фамилия
+          input#sirname(type='text', name='siname', required, placeholder='Укажите фамилию*')
+        li
+          label(for='patronymic') Отчество
+          input#patronymic(type='text', name='patronymic', placeholder='Отчество, если желаете')
+
+    fieldset
+      legend Тел
+      ul
+        li
+          input(type='number', name='phone', required, placeholder='+7 XXX XX XX*')
+
+    fieldset
+      legend E-mail
+      ul
+        li
+          input(type='email', name='email', required, placeholder='Ваш Email')
+
+    fieldset
+      legend Доп
+      ul
+        li
+          textarea(placeholder='Опишите все Ваши пожелания к заказу')
+
+    span *Поля обязательный для заполнения
+
+    button.button(type='submit') Отправить заказ
 
 block footer
   +page-footer()
