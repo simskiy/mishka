@@ -18,12 +18,62 @@
   }
 
   &__list {
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
   }
 
   &__item {
     margin: 30px;
+  }
+}
+
+@include md-block {
+
+  .catalog {
+
+    &__title {
+      height: 225px;
+      font-size: 43px;
+      line-height: 225px;
+    }
+
+    &__item {
+      margin: 55px 50px;
+
+      &:last-child {
+        margin-bottom: 63px;
+      }
+    }
+  }
+}
+
+@include xl-block {
+
+  .catalog {
+
+    &__title {
+      height: 255px;
+      font-size: 53px;
+      line-height: 255px;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 40px;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    &__item {
+
+      margin-top: 0;
+
+      &:last-child {
+        margin-bottom: 105px;
+      }
+    }
   }
 }

@@ -16,21 +16,28 @@ block header
       nav.main-nav#nav
         ul.main-nav__list
           li.main-nav__item.main-nav__item--catalog
-            a.main-nav__link(href='catalog.html') Каталог товаров
+            a.main-nav__link(href='catalog.html')
+              span.main-nav__link-text Каталог товаров
           li.main-nav__item.main-nav__item--order
-            a.main-nav__link(href='#') Вязание на заказ
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Вязание на заказ
           li.main-nav__item.main-nav__item--search
-            a.main-nav__link(href='#') Поиск по сайту
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Поиск по сайту
               +svg-bg('main-nav__search-img', spriteSvg, 'search')
           li.main-nav__item.main-nav__item--cart
-            a.main-nav__link(href='#') Корзина: пока пуста
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Корзина: пока пуста
               +svg-bg('main-nav__cart-img', spriteSvg, 'cart')
           li.main-nav__item.main-nav__item--hidden.main-nav__item--arrivals
-            a.main-nav__link(href='#') Новые поступления
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Новые поступления
           li.main-nav__item.main-nav__item--hidden.main-nav__item--sale
-            a.main-nav__link(href='#') Распродажа
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Распродажа
           li.main-nav__item.main-nav__item--hidden.main-nav__item--delivery
-            a.main-nav__link(href='#') Бесплатная доставка по России
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Бесплатная доставка по России
 block content
   +page-main()
     h1.unvis Магазин вещей ручной работы
@@ -41,7 +48,7 @@ block content
       a.banner__item.banner__item--interior(href='#') Предметы<br> интерьера
       a.banner__item.banner__item--toys(href='#') Детские<br> игрушки
 
-    .zigzag(aria-hidden=true)
+    .zigzag(aria-hidden='true')
 
     section.product
       h2.product__title Вязаные корзинки

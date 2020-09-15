@@ -15,22 +15,30 @@ block header
     .nav-wrapper
       nav.main-nav#nav
         ul.main-nav__list
-            li.main-nav__item.main-nav__item--catalog
-              a.main-nav__link Каталог товаров
-            li.main-nav__item.main-nav__item--order
-              a.main-nav__link(href='#') Вязание на заказ
-            li.main-nav__item.main-nav__item--search
-              a.main-nav__link(href='#') Поиск по сайту
-                +svg-bg('main-nav__search-img', spriteSvg, 'search')
-            li.main-nav__item.main-nav__item--cart
-              a.main-nav__link(href='#') Корзина: пока пуста
-                +svg-bg('main-nav__cart-img', spriteSvg, 'cart')
-            li.main-nav__item.main-nav__item--hidden.main-nav__item--arrivals
-              a.main-nav__link(href='#') Новые поступления
-            li.main-nav__item.main-nav__item--hidden.main-nav__item--sale
-              a.main-nav__link(href='#') Распродажа
-            li.main-nav__item.main-nav__item--hidden.main-nav__item--delivery
-              a.main-nav__link(href='#') Бесплатная доставка по России
+          li.main-nav__item.main-nav__item--catalog
+            a.main-nav__link
+              span.main-nav__link-text Каталог товаров
+          li.main-nav__item.main-nav__item--order
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Вязание на заказ
+          li.main-nav__item.main-nav__item--search
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Поиск по сайту
+              +svg-bg('main-nav__search-img', spriteSvg, 'search')
+          li.main-nav__item.main-nav__item--cart
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Корзина: пока пуста
+              +svg-bg('main-nav__cart-img', spriteSvg, 'cart')
+          li.main-nav__item.main-nav__item--hidden.main-nav__item--arrivals
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Новые поступления
+          li.main-nav__item.main-nav__item--hidden.main-nav__item--sale
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Распродажа
+          li.main-nav__item.main-nav__item--hidden.main-nav__item--delivery
+            a.main-nav__link(href='#')
+              span.main-nav__link-text Бесплатная доставка по России
+
 block content
   +page-main()
     section.catalog

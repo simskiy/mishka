@@ -4,6 +4,7 @@
 
 .card {
   $block-name: &; // #{$block-name}__element
+  box-sizing: border-box;
   border: 1px solid $border-color;
   transition: 0.3s;
 
@@ -59,6 +60,7 @@
     display: inline-block;
     margin-top: 15px;
     font-size: 13px;
+    color: $text-gray;
   }
 
   &__price {
@@ -75,5 +77,60 @@
   &__cart-img {
     margin-left: auto;
     opacity: 0.2;
+  }
+}
+
+@include md-block {
+
+  .card {
+
+    &__link {
+      display: flex;
+    }
+
+    &__img {
+      width: 50%;
+    }
+
+    &__info {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__data {
+      font-size: 15px;
+    }
+
+    &__price {
+      margin-top: auto;
+    }
+  }
+}
+
+@include xl-block {
+
+  .card {
+    width: 315px;
+    margin: 0;
+    margin-bottom: 55px;
+
+    &__link {
+      flex-direction: column;
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__info {
+      width: 100%;
+      min-height: 200px;
+    }
   }
 }
