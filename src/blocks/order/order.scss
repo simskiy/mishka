@@ -1,0 +1,45 @@
+// В этом файле должны быть стили для БЭМ-блока order, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.order {
+  $block-name: &; // #{$block-name}__element
+  max-width: 1150px;
+  overflow: hidden;
+
+  &__title {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    min-height: 177px;
+    margin: 0;
+    font-size: 1.688rem;
+    font-weight: 700;
+    padding-top: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    background: $color-gray-bg;
+  }
+
+  &__text {
+    margin: 25px 30px;
+    font-size: 0.813rem;
+    line-height: 1.5rem;
+    color: $text-gray;
+  }
+}
+
+@include md-block {
+
+  .order {
+
+    &__title {
+      min-height: 225px;
+      padding-left: 50px;
+      padding-right: 50px;
+      font-size: 43px;
+      padding-top: 100px;
+    }
+  }
+}

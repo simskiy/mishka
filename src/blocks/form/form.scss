@@ -1,0 +1,223 @@
+// В этом файле должны быть стили для БЭМ-блока form, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.form {
+  $block-name: &; // #{$block-name}__element
+
+  &__block {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    border: none;
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &--margin-type {
+      margin-top: 30px;
+    }
+
+    &--margin-color {
+      margin-top: 43px;
+    }
+
+    &--margin-username {
+      margin-top: 40px;
+    }
+
+    &--margin-contacts {
+      margin-top: 30px;
+    }
+
+    &--margin-options {
+      margin-top: 30px;
+    }
+  }
+
+  &__title {
+    // position: relative;
+    display: table;
+    font-size: 1.063rem;
+    font-weight: 700;
+    color: $color-corp;
+    text-transform: uppercase;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc(1.063rem / 2);
+      right: 30px;
+      left: 92px;
+      height: 1px;
+      background-color: $color-corp;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &--padding-left {
+      padding-left: 60px;
+    }
+  }
+
+  &__label {
+    display: block;
+    line-height: 1.125rem;
+    font-size: 1.063rem;
+    font-weight: 700;
+
+    &--height {
+      min-height: 36px;
+    }
+  }
+
+  &__label-checkbox,
+  &__label-radio {
+
+    &::before {
+      content: '';
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      top: calc(0.5315rem - 20px);
+      left: 0;
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover::before {
+      border: 2px solid $color-corp;
+    }
+  }
+
+  &__label-radio {
+    cursor: pointer;
+    margin-top: 20px;
+
+    &--top-margin {
+      margin-top: 35px;
+    }
+
+    &::before {
+      border: 2px solid $black;
+      border-radius: 50%;
+    }
+  }
+
+  &__label-checkbox {
+    cursor: pointer;
+    margin-top: 45px;
+
+    &--top-margin {
+      margin-top: 35px;
+    }
+
+    &::before {
+      border: 2px solid $border-gray;
+    }
+  }
+
+  &__label-username {
+    margin-top: 20px;
+
+    &--top-margin {
+      margin-top: 30px;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+
+    &:hover {
+      border-color: $color-corp;
+      color: $text-gray;
+    }
+
+    &--hidden {
+      display: none;
+    }
+
+    &:checked + .form__label-radio::before {
+      background-color: $color-corp;
+      box-shadow: inset 0 0 0 10px $white;
+    }
+
+    &:checked + .form__label-checkbox::before {
+      background: url('../img/svg/check.svg') no-repeat center center;
+      background-size: 60% auto;
+    }
+
+    &:active + .form__label::before {
+      border: 2px solid rgba($border-gray, 0.3);
+    }
+  }
+
+  &__input-username,
+  &__input-phone,
+  &__input-email {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-bottom: 2px solid $black;
+    outline: none;
+  }
+
+  &__input-phone,
+  &__input-email {
+    padding-right: 35px;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 30px;
+  }
+
+  &__input-phone {
+    background-image: url('../img/svg/phone.svg');
+
+    &:hover,
+    &:active {
+      background-image: url('../img/svg/phone_hover.svg');
+    }
+  }
+
+  &__input-email {
+    background-image: url('../img/svg/mail.svg');
+
+    &:hover,
+    &:active {
+      background-image: url('../img/svg/mail_hover.svg');
+    }
+  }
+
+  &__input-textarea {
+    width: 100%;
+    height: 142px;
+    border: 2px solid $border-gray;
+    padding: 17px;
+    margin-top: 20px;
+    resize: none;
+  }
+
+  &__note {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    margin: 0 30px;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: $text-gray;
+  }
+
+  &__button {
+    width: calc(100% - 60px);
+    margin: 30px 30px 55px;
+  }
+}

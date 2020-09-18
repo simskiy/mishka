@@ -4,6 +4,7 @@
 
 .catalog {
   $block-name: &; // #{$block-name}__element
+  overflow: hidden;
 
   &__title {
     display: block;

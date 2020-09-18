@@ -1,7 +1,7 @@
 extends ../pug/layout.pug
 
 block variables
-  - var spriteSvg = 'img/svg/catalog-sprite.svg';
+  - var spriteSvg = 'img/svg/order-sprite.svg';
 
 block meta
   title Главная страница
@@ -40,76 +40,74 @@ block header
               span.main-nav__link-text Бесплатная доставка по России
 
 block content
-  h1 Вязание на заказ
-  p Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.
-  form.form(action='get')
+  main.order
+    h1.order__title Вязание на заказ
 
-    fieldset
-      legend Тип
-      ul
-        li
-          input#type(type='radio', name='type', value='interior', checked)
-          label(for='type') Аксессуар для интерьера
-        li
-          input#type(type='radio', name='type', value='toy')
-          label(for='type') Детская игрушка
+    .zigzag(aria-hidden='true')
 
-    fieldset
-      legend Цвет
-      ul
-        li
-          input#white(type='checkbox', name='color', value='white', checked)
-          label(for='white') Белый
-        li
-          input#gray(type='checkbox', name='color', value='gray', checked)
-          label(for='gray') Серый
-        li
-          input#tyffany(type='checkbox', name='color', value='tyffany')
-          label(for='tyffany') &#171;Тиффани&#187;
-        li
-          input#black(type='checkbox', name='color', value='black')
-          label(for='black') Черный
-        li
-          input#pink(type='checkbox', name='color', value='pink')
-          label(for='pink') Розовый
-        li
-          input#orange(type='checkbox', name='color', value='orange')
-          label(for='orange') Оранжевый
+    p.order__text Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.
+    form.order__form.form(action='get')
 
-    fieldset
-      legend ФИО
-      ul
-        li
-          label(for='username') Имя
-          input#name(type='text', name='name', required, placeholder='Введите Ваше имя*')
-        li
-          label(for='sirname') Фамилия
-          input#sirname(type='text', name='siname', required, placeholder='Укажите фамилию*')
-        li
-          label(for='patronymic') Отчество
-          input#patronymic(type='text', name='patronymic', placeholder='Отчество, если желаете')
+      fieldset.form__block.form__block--height.form__block--margin-type
+        legend.form__title Тип
+        ul.form__list(role='none')
+          li.form__item.form__item--padding-left
+            input.form__input.form__input--hidden#type-interior(type='radio', name='type', value='interior', checked)
+            label.form__label.form__label--height.form__label-radio.form__label-radio--top-margin(for='type-interior') Аксессуар для интерьера
+          li.form__item.form__item--padding-left
+            input.form__input.form__input--hidden#type-toy(type='radio', name='type', value='toy')
+            label.form__label.form__label-radio(for='type-toy') Детская игрушка
 
-    fieldset
-      legend Тел
-      ul
-        li
-          input(type='number', name='phone', required, placeholder='+7 XXX XX XX*')
+      fieldset.form__block.form__block--margin-color
+        legend.form__title Цвет
+        ul.form__list(role='none')
+          li.form__item.form__item--padding-left
+            input.form__input.form__input--hidden#white(type='checkbox', name='color', value='white', checked)
+            label.form__label.form__label-checkbox.form__label-checkbox--top-margin(for='white') Белый
+          li.form__item.form__item--padding-left
+            input.form__input.form__input--hidden#gray(type='checkbox', name='color', value='gray', checked)
+            label.form__label.form__label-checkbox(for='gray') Серый
+          li.form__item.form__item--padding-left
+            input.form__input.form__input--hidden#tyffany(type='checkbox', name='color', value='tyffany')
+            label.form__label.form__label-checkbox(for='tyffany') &#171;Тиффани&#187;
+          li.form__item.form__item--padding-left
+            input.form__input.form__input--hidden#black(type='checkbox', name='color', value='black')
+            label.form__label.form__label-checkbox(for='black') Черный
+          li.form__item.form__item--padding-left
+            input.form__input.form__input--hidden#pink(type='checkbox', name='color', value='pink')
+            label.form__label.form__label-checkbox(for='pink') Розовый
+          li.form__item.form__item--padding-left
+            input.form__input.form__input--hidden#orange(type='checkbox', name='color', value='orange')
+            label.form__label.form__label-checkbox(for='orange') Оранжевый
 
-    fieldset
-      legend E-mail
-      ul
-        li
-          input(type='email', name='email', required, placeholder='Ваш Email')
+      fieldset.form__block.form__block--margin-username
+        legend.form__title ФИО
+        ul.form__list(role='none')
+          li.form__item
+            label.form__label.form__label-username.form__label-username--top-margin(for='username') Имя
+            input.form__input.form__input-username#name(type='text', name='name', required, placeholder='Введите Ваше имя*')
+          li.form__item
+            label.form__label.form__label-username(for='sirname') Фамилия
+            input.form__input.form__input-username#sirname(type='text', name='siname', required, placeholder='Укажите фамилию*')
+          li.form__item
+            label.form__label.form__label-username(for='patronymic') Отчество
+            input.form__input.form__input-username#patronymic(type='text', name='patronymic', placeholder='Отчество, если желаете')
 
-    fieldset
-      legend Доп
-      ul
-        li
-          textarea(placeholder='Опишите все Ваши пожелания к заказу')
+      .form__block.form__block--margin-contacts
+        label.form__title(for='phone', aria-label='Телефон') Тел
+        input.form__input.form__input-phone#phone(type='number', name='phone', required, placeholder='+7 XXX XX XX*')
 
-    span *Поля обязательный для заполнения
+      .form__block.form__block--margin-contacts
+        label.form__title(for='email', aria-label='Адрес электронной почты') E-mail
+        input.form__input.form__input-email#email(type='email', name='email', required, placeholder='Ваш Email')
 
-    button.button(type='submit') Отправить заказ
+      .form__block.form__block--margin-options
+        label.form__title(for='options', aria-label='Дополнительная информация') Доп
+        textarea.form__input.form__input-textarea#options(placeholder='Опишите все Ваши пожелания к заказу')
+
+      span.form__note *Поля обязательны для заполнения
+
+      button.button.form__button(type='submit') Отправить заказ
 
 block footer
   +page-footer()

@@ -5,8 +5,9 @@
 .button {
   $block-name: &;
   box-sizing: border-box;
-  height: 52px;
+  min-height: 52px;
   border: 2px solid $border-gray;
+  overflow: hidden;
   cursor: pointer;
   font-size: 17px;
   font-weight: 700;

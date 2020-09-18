@@ -5,6 +5,7 @@
 .main-nav {
   $block-name: &;
   // #{$block-name}__element
+  overflow: hidden;
 
   &__search-img,
   &__cart-img {
