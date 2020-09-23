@@ -13,30 +13,9 @@
     padding: 0;
     padding-left: 30px;
     padding-right: 30px;
-
-    &--margin-type {
-      margin-top: 30px;
-    }
-
-    &--margin-color {
-      margin-top: 43px;
-    }
-
-    &--margin-username {
-      margin-top: 40px;
-    }
-
-    &--margin-contacts {
-      margin-top: 30px;
-    }
-
-    &--margin-options {
-      margin-top: 30px;
-    }
   }
 
   &__title {
-    // position: relative;
     display: table;
     font-size: 1.063rem;
     font-weight: 700;
@@ -56,154 +35,15 @@
   }
 
   &__list {
-    margin: 0;
-    padding: 0;
     list-style: none;
-  }
-
-  &__item {
-    position: relative;
-
-    &--padding-left {
-      padding-left: 60px;
-    }
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   &__label {
-    display: block;
-    line-height: 1.125rem;
     font-size: 1.063rem;
     font-weight: 700;
-
-    &--height {
-      min-height: 36px;
-    }
-  }
-
-  &__label-checkbox,
-  &__label-radio {
-
-    &::before {
-      content: '';
-      box-sizing: border-box;
-      display: block;
-      position: absolute;
-      top: calc(0.5315rem - 20px);
-      left: 0;
-      width: 40px;
-      height: 40px;
-    }
-
-    &:hover::before {
-      border: 2px solid $color-corp;
-    }
-  }
-
-  &__label-radio {
-    cursor: pointer;
-    margin-top: 20px;
-
-    &--top-margin {
-      margin-top: 35px;
-    }
-
-    &::before {
-      border: 2px solid $black;
-      border-radius: 50%;
-    }
-  }
-
-  &__label-checkbox {
-    cursor: pointer;
-    margin-top: 45px;
-
-    &--top-margin {
-      margin-top: 35px;
-    }
-
-    &::before {
-      border: 2px solid $border-gray;
-    }
-  }
-
-  &__label-username {
-    margin-top: 20px;
-
-    &--top-margin {
-      margin-top: 30px;
-    }
-  }
-
-  &__input {
-    box-sizing: border-box;
-
-    &:hover {
-      border-color: $color-corp;
-      color: $text-gray;
-    }
-
-    &--hidden {
-      display: none;
-    }
-
-    &:checked + .form__label-radio::before {
-      background-color: $color-corp;
-      box-shadow: inset 0 0 0 10px $white;
-    }
-
-    &:checked + .form__label-checkbox::before {
-      background: url('../img/svg/check.svg') no-repeat center center;
-      background-size: 60% auto;
-    }
-
-    &:active + .form__label::before {
-      border: 2px solid rgba($border-gray, 0.3);
-    }
-  }
-
-  &__input-username,
-  &__input-phone,
-  &__input-email {
-    width: 100%;
-    height: 52px;
-    border: none;
-    border-bottom: 2px solid $black;
-    outline: none;
-  }
-
-  &__input-phone,
-  &__input-email {
-    padding-right: 35px;
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: 30px;
-  }
-
-  &__input-phone {
-    background-image: url('../img/svg/phone.svg');
-
-    &:hover,
-    &:active {
-      background-image: url('../img/svg/phone_hover.svg');
-    }
-  }
-
-  &__input-email {
-    background-image: url('../img/svg/mail.svg');
-
-    &:hover,
-    &:active {
-      background-image: url('../img/svg/mail_hover.svg');
-    }
-  }
-
-  &__input-textarea {
-    width: 100%;
-    height: 142px;
-    border: 2px solid $border-gray;
-    padding: 17px;
-    margin-top: 20px;
-    resize: none;
   }
 
   &__note {

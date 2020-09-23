@@ -1,0 +1,32 @@
+// В этом файле должны быть стили для БЭМ-блока username-block, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.username-block {
+  $block-name: &; // #{$block-name}__element
+  padding-top: 10px;
+  padding-bottom: 30px;
+
+  &__label {
+    display: block;
+    margin-top: 24px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-bottom: 2px solid $black;
+    color: $text-gray;
+    outline: none;
+    background-color: transparent;
+
+
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $color-corp;
+    }
+  }
+}
