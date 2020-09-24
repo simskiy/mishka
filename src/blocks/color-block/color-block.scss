@@ -68,3 +68,13 @@
     }
   }
 }
+
+@include xl-block {
+
+  .color-block {
+
+    &__item {
+      width: 33%;
+    }
+  }
+}

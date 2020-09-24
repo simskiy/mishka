@@ -56,3 +56,25 @@
     }
   }
 }
+
+@include xl-block {
+
+  .order {
+
+    &__title {
+      min-height: 255px;
+      font-size: 3.313rem;
+      padding-top: 100px;
+    }
+
+    &__text {
+      margin-top: 115px;
+      margin-left: 225px;
+      margin-right: 225px;
+    }
+
+    &__form {
+      margin-top: 60px;
+    }
+  }
+}

@@ -126,3 +126,23 @@
     }
   }
 }
+
+@include xl-block {
+
+  .form {
+
+    &__block {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    &__title {
+      width: 14%;
+    }
+
+    &__inner {
+      margin-left: 215px;
+      margin-right: 225px;
+    }
+  }
+}

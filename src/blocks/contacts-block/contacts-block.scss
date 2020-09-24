@@ -74,3 +74,14 @@
     }
   }
 }
+
+@include xl-block {
+
+  .contacts-block {
+    padding-right: 115px;
+
+    &__input {
+      width: 86%;
+    }
+  }
+}

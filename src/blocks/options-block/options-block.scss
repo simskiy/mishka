@@ -37,3 +37,14 @@
     }
   }
 }
+
+@include xl-block {
+
+  .options-block {
+    padding-right: 225px;
+
+    &__input {
+      width: 86%;
+    }
+  }
+}
