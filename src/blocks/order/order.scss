@@ -38,8 +38,21 @@
       min-height: 225px;
       padding-left: 50px;
       padding-right: 50px;
-      font-size: 43px;
+      font-size: 2.688rem;
       padding-top: 100px;
+      padding-bottom: 50px;
+    }
+
+    &__text {
+      margin-top: 55px;
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 1.063rem;
+      line-height: 1.875rem;
+    }
+
+    &__form {
+      margin-top: 60px;
     }
   }
 }

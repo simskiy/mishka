@@ -25,3 +25,15 @@
     }
   }
 }
+
+@include md-block {
+
+  .options-block {
+    margin-top: 50px;
+
+    &__input {
+      width: 75%;
+      margin-top: 0;
+    }
+  }
+}

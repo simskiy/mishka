@@ -57,56 +57,59 @@ block content
             input.form__input.type-block__input#type-toy(type='radio', name='type', value='toy')
             label.form__label.type-block__label.type-block__label--margin(for='type-toy') Детская игрушка
 
-      fieldset.form__block
-        legend.form__title Цвет
+      fieldset.form__block.form__block--gray
+        legend.form__title.form__title--margin Цвет
         ul.form__list.color-block(role='none')
-          li.form__item
+          li.form__item.color-block__item
             input.form__input.color-block__input#white(type='checkbox', name='color', value='white', checked)
             label.form__label.color-block__label(for='white') Белый
-          li.form__item
+          li.form__item.color-block__item
             input.form__input.color-block__input#gray(type='checkbox', name='color', value='gray', checked)
             label.form__label.color-block__label(for='gray') Серый
-          li.form__item
+          li.form__item.color-block__item
             input.form__input.color-block__input#tyffany(type='checkbox', name='color', value='tyffany')
             label.form__label.color-block__label(for='tyffany') &#171;Тиффани&#187;
-          li.form__item
+          li.form__item.color-block__item
             input.form__input.color-block__input#black(type='checkbox', name='color', value='black')
             label.form__label.color-block__label(for='black') Черный
-          li.form__item
+          li.form__item.color-block__item
             input.form__input.color-block__input#pink(type='checkbox', name='color', value='pink')
             label.form__label.color-block__label(for='pink') Розовый
-          li.form__item
+          li.form__item.color-block__item
             input.form__input.color-block__input#orange(type='checkbox', name='color', value='orange')
             label.form__label.color-block__label(for='orange') Оранжевый
 
-      fieldset.form__block
+      fieldset.form__block.form__block--margin
         legend.form__title ФИО
         ul.form__list.username-block(role='none')
-          li.form__item
+          li.form__item.username-block__item
             label.form__label.username-block__label(for='username') Имя:
             input.form__input.username-block__input#name(type='text', name='name', required, autocomplete='off', placeholder='Введите Ваше имя*')
-          li.form__item
+          li.form__item.username-block__item
             label.form__label.username-block__label(for='sirname') Фамилия:
             input.form__input.username-block__input#sirname(type='text', name='siname', required, autocomplete='off', placeholder='Укажите фамилию*')
-          li.form__item
+          li.form__item.username-block__item
             label.form__label.username-block__label(for='patronymic') Отчество:
             input.form__input.username-block__input#patronymic(type='text', name='patronymic', autocomplete='off', placeholder='Отчество, если желаете')
 
-      .form__block.contacts-block
-        label.form__title.contacts-block__label(for='phone', aria-label='Телефон') Тел
-        input.form__input.contacts-block__input.contacts-block__input--phone#phone(type='number', name='phone', required, autocomplete='off', placeholder='+7 XXX XX XX*')
+      .contacts-block
+        .form__block.contacts-block__item
+          label.form__title.contacts-block__label(for='phone', aria-label='Телефон') Тел
+          input.form__input.contacts-block__input.contacts-block__input--phone#phone(type='number', name='phone', required, autocomplete='off', placeholder='+7 XXX XX XX*')
 
-      .form__block.contacts-block
-        label.form__title.contacts-block__label(for='email', aria-label='Адрес электронной почты') E-mail
-        input.form__input.contacts-block__input.contacts-block__input--mail#email(type='email', name='email', required, autocomplete='off', placeholder='Ваш Email')
+        .form__block.contacts-block__item
+          label.form__title.contacts-block__label(for='email', aria-label='Адрес электронной почты') E-mail
+          input.form__input.contacts-block__input.contacts-block__input--mail#email(type='email', name='email', required, autocomplete='off', placeholder='Ваш Email')
 
       .form__block.options-block
         label.form__title.options-block__lable(for='options', aria-label='Дополнительная информация') Доп
         textarea.form__input.options-block__input#options(placeholder='Опишите все Ваши пожелания к заказу')
 
-      span.form__note *Поля обязательны для заполнения
+      .form__inner
 
-      button.button.form__button(type='submit') Отправить заказ
+        span.form__note *Поля обязательны для заполнения
+
+        button.button.form__button(type='submit') Отправить заказ
 
 block footer
   +page-footer()
