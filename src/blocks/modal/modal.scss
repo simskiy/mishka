@@ -1,0 +1,221 @@
+// В этом файле должны быть стили для БЭМ-блока modal, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.no-js .modal {
+  display: flex;
+  justify-content: space-around;
+  position: static;
+  width: 100vw;
+
+  &__page {
+    position: static;
+  }
+
+  &__close {
+    display: none;
+  }
+}
+
+
+.modal {
+  $block-name: &; // #{$block-name}__element
+  $btn-height: 52px;
+
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($white, 0.9);
+
+  &__page {
+    box-sizing: border-box;
+    position: fixed;
+    z-index: auto;
+    top: calc(50% - (336px / 2));
+    width: 100%;
+    border: 1px solid $modal-border;
+    padding: 30px 30px 45px;
+    box-shadow: 0 5px 10px 0 rgba($black, 0.25);
+    background-color: $white;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.563rem;
+    line-height: 1.875rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-size: 0.938rem;
+    color: $text-gray;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: stretch;
+    padding: 0;
+    margin-top: 28px;
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  &__item {
+    flex: 1;
+    margin-right: 7px;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .modal__label {
+      border-color: $color-corp;
+    }
+  }
+
+  &__label {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    min-height: $btn-height;
+    border: 2px solid rgba($border-gray, 0.1);
+    padding: 10px;
+    cursor: pointer;
+    padding-top: 14px;
+    line-height: 1.063rem;
+    color: $text-gray;
+    font-size: 1.063rem;
+    font-weight: 700;
+    text-align: center;
+
+    &:hover {
+      border-color: rgba($border-gray, 0.3);
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 50px;
+    border: 2px solid $color-corp;
+    cursor: pointer;
+    margin-top: 30px;
+    color: $white;
+    background-color: $color-corp;
+    font-size: 1.063rem;
+    font-weight: 700;
+    outline: none;
+    text-transform: uppercase;
+    transition: 0.2s;
+
+    &:hover {
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+      transform: translate(-6px, -6px);
+    }
+
+    &:active {
+      box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+      transform: translate(-3px, -3px);
+      color: $text-gray;
+    }
+  }
+
+  &__close {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $white;
+    cursor: pointer;
+    font-size: 0;
+    border-radius: 50%;
+    background-color: $color-corp;
+    outline: none;
+
+    &:hover {
+      border: 1px solid $black;
+      background-color: $color-corp_darken;
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background: $red;
+    }
+
+    &:hover::before {
+      transform: rotate(405deg);
+    }
+
+    &:hover::after {
+      transform: rotate(495deg);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: $black;
+      transition: 0.5s;
+    }
+
+    &::before {
+      top: 13px;
+      left: 4px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 13px;
+      left: 4px;
+      transform: rotate(135deg);
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+@include md-block {
+
+  .modal {
+
+    &__page {
+      left: calc(50% - (566px / 2));
+      width: 566px;
+      padding: 50px 105px 45px;
+    }
+
+    &__title {
+      font-size: 1.875rem;
+    }
+
+    &__text {
+      margin-top: 35px;
+    }
+
+    &__list {
+      margin-top: 25px;
+    }
+
+    &__close {
+      top: -14px;
+      right: -14px;
+    }
+  }
+}

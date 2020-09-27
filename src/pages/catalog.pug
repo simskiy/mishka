@@ -48,29 +48,38 @@ block content
 
       ul.catalog__list
         li.catalog__item.card
-          a.card__link(href='#')
-            +picture-retina('card__img', 'photo-1', 'Зайчик-попрыгайчик')
+          .card__inner
+            a.card__link(href='#')
+              +picture-retina('card__img', 'photo-1', 'Зайчик-попрыгайчик')
             p.card__info
-              span.card__title Зайчик попрыгайчик <br>
+              span.card__title
+                a.card__link(href='#') Зайчик попрыгайчик <br>
               span.card__data Рост 30см, вес 200 г<br>
               span.card__price 1200 руб.
-                +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
+                a.modal-size(href='#modal')
+                  +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
         li.catalog__item.card
-          a.card__link(href='#')
-            +picture-retina('card__img', 'photo-2', 'Корзинка для белья')
+          .card__inner
+            a.card__link(href='#')
+              +picture-retina('card__img', 'photo-2', 'Корзинка для белья')
             p.card__info
-              span.card__title Корзинка для белья <br>
+              span.card__title
+                a.card__link(href='#') Корзинка для белья <br>
               span.card__data Диаметр 15 см, высота 10 см<br>
               span.card__price 690 руб.
-                +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
+                a.modal-size(href='#modal')
+                  +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
         li.catalog__item.card
-          a.card__link(href='#')
-            +picture-retina('card__img', 'photo-3', 'Большая корзинка для игрушек')
+          .card__inner
+            a.card__link(href='#')
+              +picture-retina('card__img', 'photo-3', 'Большая корзинка для игрушек')
             p.card__info
-              span.card__title Большая корзинка для игрушек <br>
+              span.card__title
+                a.card__link(href='#') Большая корзинка для игрушек <br>
               span.card__data Диаметр 30 см, высота 30 см<br>
               span.card__price 1500 руб.
-                +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
+                a.modal-size(href='#modal')
+                  +svg-bg('card__cart-img', spriteSvg, 'cart')(width=21, height=19)
         li.catalog__item.prod
           span.prod__title
             +svg-bg('prod__title-ico', spriteSvg, 'video')(width=32, height=22)
@@ -82,6 +91,7 @@ block content
             span.prod__text По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
             a(href='#')
              button.button.prod__button Сделать заказ
+  +modal()
 
 block footer
   +page-footer()

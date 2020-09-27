@@ -67,7 +67,7 @@ block content
             td.table__text 15 см
       +picture-retina('product__img', 'triple-set', 'Вязанные корзинки')
       span.product__cost Цена: 990 руб.
-      button.button.product__button Заказать
+      a.button.product__button.modal-size(href='#modal') Заказать
 
     .zigzag-line(aria-hidden='true')
 
@@ -117,6 +117,8 @@ block content
       button.button.contact__button
         a(href='#') Напишите нам
 
+  +modal()
+
 block footer
   +page-footer()
     a
@@ -133,3 +135,5 @@ block footer
           +svg-img('', 'Твиттер', spriteSvg, 'twitter')(width=23, height=20)
     a.page-footer__htmlacademy(href='#') Разработанно
       +svg-img('page-footer__htmlacademy-ico', 'HTML Academy', spriteSvg, 'htmlacademy')(width=27, height=34)
+
+

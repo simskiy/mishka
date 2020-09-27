@@ -1,0 +1,21 @@
+//- Все примеси в этом файле должны начинаться c имени блока (modal)
+
+mixin modal()
+  .modal.modal--hidden#modal
+    .modal__page
+      h2.modal__title Добавить в корзину
+      p.modal__text Выберите размер:
+      form
+        ul.modal__list
+          li.modal__item
+            input.modal__input#size_s(type='radio', name='size', value='S', checked)
+            label.modal__label(for='size_s') S
+          li.modal__item
+            input.modal__input#size_m(type='radio', name='size', value='M')
+            label.modal__label(for='size_m') M
+          li.modal__item
+            input.modal__input#size_l(type='radio', name='size', value='L')
+            label.modal__label(for='size_l') L
+
+      button.modal__button Добавить
+      button.modal__close Закрыть
